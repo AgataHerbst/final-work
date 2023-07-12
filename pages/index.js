@@ -1,11 +1,14 @@
+import Head from 'next/head';
 import Heading from "../components/Heading";
 import styles from "../styles/Home.module.scss";
 
 function Home() {
     return <>
-<Heading text="Кулинарная страница" />
-           <div className={styles.wrapper}>
-            <h1> Iris Backer </h1>
+      <div className={styles.wrapper}>
+        <Head>
+            <title>Home</title>
+        </Head>
+           <Heading text="Iris Backer" />
            </div>
            </>
 }
