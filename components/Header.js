@@ -1,9 +1,11 @@
+import Heading from "./Heading";
 
 
-function Header() {
-  return (
-    <div>IRIS BACKER</div>
-  )
-}
-
-export default Header
+ function Header() {
+  return <>
+    <header> 
+<Heading tag="h3" text="Header" />
+    </header>
+    </>
+ }
+ export default Header;

@@ -1,8 +1,10 @@
-
+import Heading from "../components/Heading";
 
 function Contact() {
-    return (
-        <div >
+    return <>
+       <Heading text=" Контакты" />
+     
+      
 
             <div>
                 <h1> CONTACT US </h1>
@@ -22,8 +24,8 @@ function Contact() {
                     <button type="submit"> Send Message </button>
                 </form>
             </div>
-        </div>
-    )
+       
+            </>
 }
 
 export default Contact

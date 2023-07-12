@@ -1,9 +1,11 @@
-
+import Heading from "./Heading";
 
 function Footer() {
-  return (
-    <div><p>&copy; 2023 irisbackery.com</p></div>
-  )
+  return <>
+   <footer>
+   <Heading tag="h3" text="&copy; 2023 IrisBackery.com" />
+   </footer>
+   </>
 }
 
-export default Footer
+export default Footer;

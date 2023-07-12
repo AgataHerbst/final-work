@@ -1,11 +1,12 @@
+import Heading from "../components/Heading";
+
 function Home() {
-    return (
-           <div>
+    return <>
+<Heading text="Кулинарная страница" />
+           
             <h1> Iris Backer </h1>
             <p> CAKES TO FIT ANY TASTE </p>
-            <button> ORDER NOW </button>
-        </div>
-    )
+           </>
 }
 
 export default Home;
