@@ -1,7 +1,8 @@
 //основной макет приложения
 
-import Header from './Header.js';
+
 import Footer from './Footer.js';
+import Header from './Navbar.js';
 
  function Layout({ children }) {
     return <>
