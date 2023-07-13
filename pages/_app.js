@@ -18,7 +18,7 @@ function MyApp ({ Component, pageProps}){
     width={500}
     height={350}
     alt="preview"
-    placeholder="blur"
+   
     />
     </Layout>
     </>
