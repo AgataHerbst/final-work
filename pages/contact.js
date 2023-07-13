@@ -7,8 +7,7 @@ function Contact() {
         <title>Contact</title>
     </Head>
        <Heading text="Contact:" />
-      
-            </>
+      </>
 }
 
 export default Contact

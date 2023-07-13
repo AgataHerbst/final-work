@@ -1,45 +1,47 @@
-import NextAuth from 'next-auth';
+import NextAuth from 'next-auth/next';
 import GoogleProvider from "next-auth/providers/google";
-import YandexProvider from "next-auth/providers/yandex";
+import CredentialsProvider from 'next-auth/providers/credentials';
+
 
 export const authOptions = {
-      providers: [
-    GoogleProvider({
-      clientId: process.env.GOOGLE_ID,
-      clientSecret: process.env.GOOGLE_SECRET,
-    }),
-    YandexProvider({
-      clientId: process.env.YANDEX_CLIENT_ID,
-      clientSecret: process.env.YANDEX_CLIENT_SECRET
-    }),
-   ],
-  callbacks: {
-    async signIn({ user, account, profile, email, credentials }) {
-      console.debug('>> callback signIn', { user, account, profile, email, credentials });
-      return true;
+providers: [
+  GoogleProvider({
+    clientId:'781023172853-p1dadh2029jjbvg277aa1rfe27a931kk.apps.googleusercontent.com',
+    clientSecret: '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',
+  }),
+  CredentialsProvider({
+    name: 'credentials',
+    credentials: {
+      email: {
+        label: 'Email',
+        type: 'email',
+        image: 'https://lh3.googleusercontent.com/a/AAcHTtdYIj6J4Z7hZfzutQs3lk6XtYlo1TBoiYWs7dxm_y_ANUo=s288-c-no',
+      },
+      password: {
+        label: 'Password',
+        type: 'password'
+      },
     },
-    async redirect({ url, baseUrl }) {
-      console.debug('>> callback redirect', { url, baseUrl });
-      return baseUrl;
-    },
-    async session({ session, user, token }) {
-      console.debug('>> callback session', { session, user, token });
-      session.user.id = user.id;
-      session.user.role = user.role;
-      return session;
-    },
-    async jwt({ token, user, account, profile, isNewUser }) {
-      console.debug('>> callback jwt', { token, user, account, profile, isNewUser });
-      return token;
+    async authorize(credentials, req) {
+console.log(credentials)
+const { email, password } = credentials
+const user = {
+name: 'Agata Herbst',
+email: 'toyotakar05@mail.ru'
+}
+
+/*const isValidationFailed = true
+if (isValidationFailed) {
+throw new Error('Email password invalid')
+}*/
+return user
     }
-  }
-};
+  })
+ ],
+ secret: 'Ov8LfroD1O8oTmdkkuvOENeJ5Sy5/CHKKLGoqEvI5Y4='
+}
 
-const resf = NextAuth(authOptions);
-
-export default (...params) => {
-  const [req] = params;
-  console.log('pages/api/auth/[...nextauth].js ');
-  console.log('>> ', req.method, ' запрос на', req.url, req.query);
-  return resf(...params);
-};
+export default NextAuth (authOptions)
+   
+ 
+  
