@@ -3,7 +3,7 @@ import GoogleProvider from "next-auth/providers/google";
 import CredentialsProvider from 'next-auth/providers/credentials';
 
 
-export const authOptions = {
+ const authOptions = {
 providers: [
   GoogleProvider({
     clientId:'781023172853-p1dadh2029jjbvg277aa1rfe27a931kk.apps.googleusercontent.com',
@@ -15,7 +15,6 @@ providers: [
       email: {
         label: 'Email',
         type: 'email',
-        image: 'https://lh3.googleusercontent.com/a/AAcHTtdYIj6J4Z7hZfzutQs3lk6XtYlo1TBoiYWs7dxm_y_ANUo=s288-c-no',
       },
       password: {
         label: 'Password',
@@ -27,7 +26,8 @@ console.log(credentials)
 const { email, password } = credentials
 const user = {
 name: 'Agata Herbst',
-email: 'toyotakar05@mail.ru'
+email: 'toyotakar05@mail.ru',
+image: 'https://lh3.googleusercontent.com/a/AAcHTtdYIj6J4Z7hZfzutQs3lk6XtYlo1TBoiYWs7dxm_y_ANUo=s288-c-no',
 }
 
 /*const isValidationFailed = true
@@ -42,6 +42,8 @@ return user
 }
 
 export default NextAuth (authOptions)
-   
+export const getServerAuthSession = (req, res) => {
+return getServerAuthSession(req, res, authOptions)
+}
  
   

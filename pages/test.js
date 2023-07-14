@@ -1,30 +1,45 @@
-import {getServerSession} from 'next-auth/next';
-import {authOptions} from './api/auth/[...nextauth]';
+import { useSession } from 'next-auth/react';
 
-function TestPage({user}) {
-  return <div>TestPage
-    <pre>{JSON.stringify(user, null, 2)}</pre>
-  </div>
+//import {getServerAuthSession} from './api/auth/[...nextauth]'
+
+function TestPage() {
+  const {data, status} = useSession()
+
+  /*if(status === 'loading') {
+    return <h3>loading...</h3>
+  }
+  if(status === 'unauthenticated') {
+return <h3>{status}</h3>
+  }*/
   
+  return (
+  <div>TestPage
+    <pre>{JSON.stringify(data.user, null, 2)}</pre>
+  </div>
+  )
 }
-/** 
-*@param {import('next').getServerSidePropsContext} ctx
-*/
-export async function getServerSideProps(ctx) {
-    const session = await getServerSession(ctx.req, ctx.res, authOptions)
+
+TestPage.auth = true
+// /** 
+// *@param {import('next').getServerSidePropsContext} ctx
+// */
+//export async function getServerSideProps(ctx) {
+   //const session = await getServerAuthSession (ctx.req, ctx.res)
+  
+   // if (!session) {
+//return {
+    //redirect: {
+    //  destination:'/',
+    //permanent: false,
+  //}
+//}
+   // }
     
-    if (!session) {
-return {
-    redirect: '/api/auth/signin',
-    permanent: false
-}
-    }
-    
-    return {
-        props: {
-         user: session.user 
-        }
-    }
-}
+   // return {
+      //  props: {
+       //  user: session.user 
+       // }
+   // }
+//}
 
 export default TestPage
