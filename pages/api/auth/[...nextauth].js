@@ -1,9 +1,11 @@
 import NextAuth from 'next-auth/next';
 import GoogleProvider from "next-auth/providers/google";
 import CredentialsProvider from 'next-auth/providers/credentials';
+import {PrismaAdapter} from 'next-auth/prisma-adapter'
 
-
+const adapter = PrismaAdapter(prisma)
  const authOptions = {
+adapter: adapter,
 providers: [
   GoogleProvider({
     clientId:'781023172853-p1dadh2029jjbvg277aa1rfe27a931kk.apps.googleusercontent.com',
