@@ -26,7 +26,7 @@ function Navbar() {
                     <Link key={id} href={path}>
                         <legacyBehavior className={pathname === path ? styles.active : null}>{title}</legacyBehavior></Link>
                 ))}
-
+   <Link href='api/auth/signin'><button>Войти</button></Link>
             </div>
         </nav>
     );
