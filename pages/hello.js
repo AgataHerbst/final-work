@@ -1,4 +1,4 @@
-import { getServerAuthSession } from "./api/auth/[...nextauth]"
+/*import { getServerAuthSession } from "./api/auth/[...nextauth]"
 
 export default async function handler (req, res) {
     const session = await getServerAuthSession(req, res)
@@ -7,4 +7,4 @@ export default async function handler (req, res) {
        res.status(401).json({message: "Unauthorized"})
     }
 res.status(200).json({name: 'Agata Herbst'})
-}
+}*/
