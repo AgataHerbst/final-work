@@ -1,3 +1,4 @@
+//import '../styles.css'
 import Heading from "./Heading";
 
 function Footer  () {

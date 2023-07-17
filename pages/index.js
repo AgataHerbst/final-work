@@ -1,6 +1,6 @@
 import Head from "next/head";
 import Heading from "../components/Heading";
-import styles from "../styles/Home.module.scss";
+import BannerImage from "../public/cake1.jpg";
 
 
  function Home  () {
@@ -12,7 +12,7 @@ import styles from "../styles/Home.module.scss";
      </Head>
   
     <main>
-    <div className={styles.wrapper}>
+    <div className="home" style={{ backgroundImage: `url(${BannerImage})`}}>
     <Heading text="Iris Backer" />
     
     </div>

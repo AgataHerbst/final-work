@@ -1,8 +1,8 @@
+//import '../styles.css'
 import Head from 'next/head';
 import Layout from "../components/Layout";
 //import Image from 'next/image';
 //import cakeImg from '../public/cake.png';
-import '../styles/globals.scss';
 import { SessionProvider, useSession } from 'next-auth/react';
 import { useRouter } from 'next/router';
 import {useEffect} from 'react';
@@ -13,7 +13,7 @@ function MyApp ({ Component,
     console.log(Component.auth)
     return <>
     <Head>
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300&display=swap" rel="stylesheet" />
+   
     </Head>
     <SessionProvider session={session}>
     <Layout>

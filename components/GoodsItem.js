@@ -1,7 +1,7 @@
 import { Grid, Card, CardMedia, CardContent, Typography, CardActions, Button } from '@mui/material';
 
 const GoodsItem = (props) => {
-    const { name, price, image, setOrder } = props;
+    const { name, price, img, setOrder } = props;
 
     return (
         <Grid item xs={12} md={4}>
@@ -10,11 +10,11 @@ const GoodsItem = (props) => {
                 height: '100%'
             }}>
                 <CardMedia
-                    image={image}
+                   image={img}
                     component='img'
                     alt={name}
                     title={name}
-                    sx={{ height: 400}}
+                    sx={{ height: 140}}
                 />
                 <CardContent>
                     <Typography

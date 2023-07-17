@@ -4,7 +4,7 @@ import Heading from "../components/Heading";
 function Posts() {
   return <>
   <Head>
-    <title>Posts</title>
+    <title>Post</title>
   </Head>
    <Heading text="Post list:" />
 

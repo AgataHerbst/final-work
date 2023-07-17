@@ -1,3 +1,4 @@
+import { useState } from 'react';
 import Head from 'next/head';
 import Heading from "../components/Heading";
 import { Container } from '@mui/material';
@@ -5,8 +6,16 @@ import Basket from '../components/Basket';
 import GoodsList from '../components/GoodsList';
 import Search from '../components/Search';
 import Snack from '../components/Snack';
+import { goods } from '../data/goods';
+
 
 function Galleries() {
+    const [order, setOrder] = useState([]);
+    const [search, setSearch] = useState('');
+    const [products, setProducts] = useState(goods);
+    const [isCartOpen, setCartOpen] = useState(false);
+    const [isSnackOpen, setSnackOpen] = useState(false);
+
   const handleChange = (e) => {
     if (!e.target.value) {
         setProducts(goods);
@@ -63,9 +72,10 @@ const removeFromOrder = (goodsItem) => {
 
   return <>
   <Head handleCart={() => setCartOpen(true)}
-                orderLen={order.length}>
+        orderLen={order.length}>
     <title>Galleries</title>
   </Head>
+  <Heading text="Galleries:"/>
   <Container
                 sx={{
                     mt: '1rem'
@@ -91,9 +101,7 @@ const removeFromOrder = (goodsItem) => {
             isOpen={isSnackOpen}
             handleClose={() => setSnackOpen(false)}
             />
-        
-    <Heading text="galleries"/>
-    </>
+        </>
 }
 
 export default Galleries;
