@@ -1,22 +1,25 @@
 import Head from "next/head";
 import Heading from "../components/Heading";
-import BannerImage from "../public/cake1.jpg";
+//import Image from 'next/image';
+import s from '../styles/index.module.css';
+import { Typography } from "@mui/material";
 
 
  function Home  () {
   return (
     <>
-  
-    <Head>
+     <Head>
       <title>Home</title>
      </Head>
-  
-    <main>
-    <div className="home" style={{ backgroundImage: `url(${BannerImage})`}}>
-    <Heading text="Iris Backer" />
-    
-    </div>
-    </main>
+     <Heading text="Iris Backer" />
+    <div className={s.image}>
+       <Typography
+        variant="h3"
+        component="span"
+        sx={{ flexGrow: 1 }}
+      >CAKES TO FIT ANY TASTE
+      </Typography>
+   </div>
     </>
 );
   }

@@ -14,7 +14,7 @@ const GoodsItem = (props) => {
                     component='img'
                     alt={name}
                     title={name}
-                    sx={{ height: 140}}
+                    sx={{ height: 300}}
                 />
                 <CardContent>
                     <Typography

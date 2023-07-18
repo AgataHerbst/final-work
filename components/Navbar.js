@@ -32,9 +32,10 @@ function Navbar({ handleCart, orderLen }) {
                 </Typography>
                 <div>
                     {navigation.map(({ id, title, path }) => (
-                        <Link key={id} href={path}>
-                            <legacyBehavior className={pathname === path}>{title}</legacyBehavior>
-                        </Link>
+                        <Link key={id}
+                         href={path}
+                         className={pathname === path}>
+                         {title}</Link>
                     ))}
                     <Link href='api/auth/signin'><button>Войти</button></Link>
                 </div>

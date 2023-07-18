@@ -18,7 +18,7 @@ function About() {
         component="span"
         sx={{ flexGrow: 1 }}
       >
-        <Image src="/iris3.png" width="200" height="200" alt="cake" />
+        <Image src="/img/iris3.jpg" width={500} height={500} alt="cake" />
       </Typography>
       <Heading tag="h2" text="Уникальный вкус
                 «Очень легкий и не слишком насыщенный».

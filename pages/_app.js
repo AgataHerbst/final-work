@@ -1,8 +1,6 @@
-//import '../styles.css'
+//import '../styles/global.css';
 import Head from 'next/head';
 import Layout from "../components/Layout";
-//import Image from 'next/image';
-//import cakeImg from '../public/cake.png';
 import { SessionProvider, useSession } from 'next-auth/react';
 import { useRouter } from 'next/router';
 import {useEffect} from 'react';

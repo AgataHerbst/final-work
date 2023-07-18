@@ -71,8 +71,9 @@ const removeFromOrder = (goodsItem) => {
 };
 
   return <>
-  <Head handleCart={() => setCartOpen(true)}
-        orderLen={order.length}>
+  <Head  
+  handleCart={() => setCartOpen(true)}
+  orderLen={order.length}>
     <title>Galleries</title>
   </Head>
   <Heading text="Galleries:"/>
@@ -97,7 +98,6 @@ const removeFromOrder = (goodsItem) => {
                 closeCart={() => setCartOpen(false)}
             />
             <Snack 
-            
             isOpen={isSnackOpen}
             handleClose={() => setSnackOpen(false)}
             />
