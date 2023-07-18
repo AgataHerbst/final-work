@@ -2,7 +2,7 @@ import Head from 'next/head';
 import Heading from "../components/Heading";
 import Image from 'next/image';
 import { Typography } from "@mui/material";
-import s from '../styles/About.module.css';
+import s from '../styles/about.module.css';
 
 function About() {
   return <>
