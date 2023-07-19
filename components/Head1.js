@@ -11,7 +11,7 @@ function Header({handleCart, orderLen}) {
             component="span"
             sx={{flexGrow: 1}}
             >
-            IRIS BACKER
+         HEAD1
             </Typography>
             <IconButton
             color="inherit"
