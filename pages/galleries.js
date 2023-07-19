@@ -6,12 +6,13 @@ import Basket from '../components/Basket';
 import GoodsList from '../components/GoodsList';
 import Search from '../components/Search';
 import Snack from '../components/Snack';
-import { goods } from '../data/goods';
+import { goods } from '../data/goods'; //набор товаров
 
+import Head1 from '../components/Head1';
 
 function Galleries() {
-    const [order, setOrder] = useState([]);
-    const [search, setSearch] = useState('');
+    const [order, setOrder] = useState([]); //заказ управляется по кнопке купить
+    const [search, setSearch] = useState(''); //поиск управляется кнопкой search
     const [products, setProducts] = useState(goods);
     const [isCartOpen, setCartOpen] = useState(false);
     const [isSnackOpen, setSnackOpen] = useState(false);
@@ -71,10 +72,13 @@ const removeFromOrder = (goodsItem) => {
 };
 
   return <>
-  <Head  
+  <Head1  
   handleCart={() => setCartOpen(true)}
-  orderLen={order.length}>
-    <title>Galleries</title>
+ orderLen={order.length}/>
+ <Head
+
+ >
+<title>Galleries</title>
   </Head>
   <Heading text="Galleries:"/>
   <Container

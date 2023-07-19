@@ -6,30 +6,30 @@ const GoodsItem = (props) => {
     return (
         <Grid item xs={12} md={4}>
             <Card
-            sx={{
-                height: '100%'
-            }}>
+                sx={{
+                    height: '100%'
+                }}>
                 <CardMedia
-                   image={img}
+                    image={img}
                     component='img'
                     alt={name}
                     title={name}
-                    sx={{ height: 300}}
+                    sx={{ height: 300 }}
                 />
                 <CardContent>
                     <Typography
-                    variant='h6'
-                    component='h3'
+                        variant='h6'
+                        component='h3'
                     >
                         {name}
                     </Typography>
                     <Typography
-                    variant='body1'>Цена: {price} руб.</Typography>
-                     </CardContent>
-                     <CardActions>
+                        variant='body1'>Цена: {price} руб.</Typography>
+                </CardContent>
+                <CardActions>
                     <Button
-                    variant='text'
-                       onClick={() =>
+                        variant='text'
+                        onClick={() =>
                             setOrder({
                                 id: props.id,
                                 name: props.name,
@@ -39,8 +39,8 @@ const GoodsItem = (props) => {
                     >
                         Купить
                     </Button>
-                    </CardActions>
-                </Card>
+                </CardActions>
+            </Card>
         </Grid>
     );
 };

@@ -18,8 +18,6 @@ function Navbar({ handleCart, orderLen }) {
     const { pathname } = useRouter(); //путь текущей страницы
     // const { data, status } = useSession();
     return (
-        //<nav className={styles.nav}>
-        // <div className={styles.logo}>
         <AppBar position="static">
             <Toolbar>
                 <Typography
@@ -34,7 +32,7 @@ function Navbar({ handleCart, orderLen }) {
                     {navigation.map(({ id, title, path }) => (
                         <Link key={id}
                          href={path}
-                         className={pathname === path}>
+                         className={pathname === path ? 'active': ''}>
                          {title}</Link>
                     ))}
                     <Link href='api/auth/signin'><button>Войти</button></Link>
@@ -47,7 +45,8 @@ function Navbar({ handleCart, orderLen }) {
                         color='secondary'
                         badgeContent={orderLen}
                     >
-                        <ShoppingCart />
+                        <ShoppingCart 
+                        />
                     </Badge>
                 </IconButton>
             </Toolbar>
