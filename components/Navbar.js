@@ -34,7 +34,7 @@ function Navbar({ handleCart, orderLen }) {
                     {navigation.map(({ id, title, path }) => (
                         <Link key={id}
                          href={path}
-                         className={pathname === path}>
+                         className={pathname === path ? 'active' : ''}>
                          {title}</Link>
                     ))}
                     <Link href='api/auth/signin'><button>Войти</button></Link>
