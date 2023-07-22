@@ -5,7 +5,7 @@ export const goods = [
         id: 'js01',
         category: 'cake',
         name: 'Berry',
-        img:  "/img/berry.jpg",
+        img: "/img/berry.jpg",
         price: 7500,
     },
     {
@@ -26,7 +26,7 @@ export const goods = [
         id: 'data01',
         category: 'cake',
         name: 'Happy',
-        img:  "/img/happy.jpg",
+        img: "/img/happy.jpg",
         price: 3500,
     },
     {
@@ -64,5 +64,5 @@ export const goods = [
         img: "/img/whiteChocolate.jpg",
         price: 7500,
     }
-    
+
 ];

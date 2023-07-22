@@ -1,15 +1,20 @@
 import { useState } from 'react';
+import Head from 'next/head';
 import Heading from "../components/Heading";
 import { Container } from '@mui/material';
+import Basket from '../components/Basket';
 import GoodsList from '../components/GoodsList';
 import Search from '../components/Search';
 import Snack from '../components/Snack';
 import { goods } from '../data/goods'; //набор товаров
 
+import Head1 from '../components/Head1';
+
 function Galleries() {
     const [order, setOrder] = useState([]); //заказ управляется по кнопке купить
     const [search, setSearch] = useState(''); //поиск управляется кнопкой search
     const [products, setProducts] = useState(goods);
+    const [isCartOpen, setCartOpen] = useState(false);
     const [isSnackOpen, setSnackOpen] = useState(false);
 
     const handleChange = (e) => {
@@ -62,8 +67,17 @@ function Galleries() {
         setSnackOpen(true);
     };
 
+    const removeFromOrder = (goodsItem) => {
+        setOrder(order.filter((item) => item.id !== goodsItem));
+    };
 
     return <>
+        <Head1
+            handleCart={() => setCartOpen(true)}
+            orderLen={order.length} />
+        <Head>
+            <title>Galleries</title>
+        </Head>
         <Heading text="Galleries:" />
         <Container
             sx={{
@@ -79,6 +93,12 @@ function Galleries() {
             />
 
         </Container>
+        <Basket
+            order={order}
+            removeFromOrder={removeFromOrder}
+            cartOpen={isCartOpen}
+            closeCart={() => setCartOpen(false)}
+        />
         <Snack
             isOpen={isSnackOpen}
             handleClose={() => setSnackOpen(false)}

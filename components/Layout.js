@@ -1,12 +1,9 @@
-//основной макет приложения
-//import '../styles.css'
-
 import Footer from './Footer';
-import Header from './Navbar';
+import Navbar from './Navbar';
 
  function Layout({ children }) {
     return <>
-        <Header />
+        <Navbar />
         {children}
         <Footer />
     </>

@@ -25,15 +25,15 @@ function Navbar({ handleCart, orderLen }) {
                     component="span"
                     sx={{ flexGrow: 1 }}
                 >
-                    <Image src="/logo1.png" width="60" height="60" alt="cake" />
+                    <Image src="/logos1.jpg" width="60" height="60" alt="cake" />
                     IrisBacker
                 </Typography>
                 <div>
                     {navigation.map(({ id, title, path }) => (
                         <Link key={id}
-                         href={path}
-                         className={pathname === path ? 'active' : ''}>
-                         {title}</Link>
+                            href={path}
+                            className={pathname === path ? 'active' : ''}>
+                            {title}</Link>
                     ))}
                     <Link href='api/auth/signin'><button>Войти</button></Link>
                 </div>
@@ -45,7 +45,7 @@ function Navbar({ handleCart, orderLen }) {
                         color='secondary'
                         badgeContent={orderLen}
                     >
-                        <ShoppingCart 
+                        <ShoppingCart
                         />
                     </Badge>
                 </IconButton>
