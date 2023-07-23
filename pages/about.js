@@ -26,7 +26,6 @@ const data = [
   },
 ]
 
-
 function About() {
   return <>
     <Container maxWidth='sm'>
@@ -36,7 +35,6 @@ function About() {
         component="span"
         sx={{ flexGrow: 1 }}
       >
-
         <ImageList sx={{ width: 600, height: 600 }} cols={3} rowHeight={164}>
           {data.map((item) => (
             <ImageListItem key={item.img}>
@@ -45,8 +43,7 @@ function About() {
                 src={`${item.img}?w=164&h=164&fit=crop&auto=format`}
                 srcSet={`${item.img}?w=164&h=164&fit=crop&auto=format&dpr=2 2x`}
                 alt={item.title}
-                loading="lazy"
-              />
+               />
 
             </ImageListItem>
           ))}

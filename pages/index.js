@@ -25,7 +25,7 @@ function Home() {
       <Image src="/backer/chef2.jpg" width={300} height={300} alt="chef" />
       <Typography
         variant="h3"
-        component="р"
+        component="span"
         sx={{ flexGrow: 2 }}
       >CAKES TO FIT ANY TASTE
       </Typography>
