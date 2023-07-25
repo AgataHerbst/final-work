@@ -4,7 +4,26 @@ import { useEffect, useState } from 'react';
 import Footer from '../components/Footer';
 import Navbar from '../components/Navbar';
 import Basket from '../components/Basket';
+import { Container } from "@mui/material";
+import { createTheme, ThemeProvider } from '@mui/material/styles';
+import '../styles/globals.css';
 
+const theme = createTheme({
+    palette: {
+      primary: {
+        light: '#757ce8',
+        main: '#FFE4B5',
+        dark: '#002884',
+        contrastText: '#fff',
+      },
+      secondary: {
+        light: '#ff7961',
+        main: '#FF8C00',
+        dark: '#ba000d',
+        contrastText: '#000',
+      },
+    },
+  });
 
 function MyApp({ Component,
     pageProps: { session, ...pageProps }
@@ -17,12 +36,13 @@ function MyApp({ Component,
     };
     console.log(Component.auth)
     return <>
-
         <SessionProvider session={session}>
+        <ThemeProvider theme={theme}> 
             <Navbar
                 handleCart={setCartOpen}
                 orderLen={10}
             />
+             </ThemeProvider>
             <main>
                 {Component.auth ? (
                     <Auth>
@@ -33,7 +53,9 @@ function MyApp({ Component,
                 )
                 }
             </main>
-            <Footer />
+            <Container fixed >
+                <Footer />
+            </Container>
             <Basket
                 order={order}
                 removeFromOrder={removeFromOrder}
@@ -41,6 +63,7 @@ function MyApp({ Component,
                 closeCart={() => setCartOpen(false)}
             />
         </SessionProvider>
+
     </>
 }
 export default MyApp;

@@ -1,3 +1,9 @@
+.main{
+  padding: 0;
+  margin: 0; 
+  background: linear-gradient(to bottom, #D8BFD8, #FFFFE0);
+  color: black;
+  font-size: 20px;
+}
 
-  
 

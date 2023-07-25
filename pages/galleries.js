@@ -5,6 +5,7 @@ import GoodsList from '../components/GoodsList';
 import Search from '../components/Search';
 import Snack from '../components/Snack';
 import { goods } from '../data/goods'; //набор товаров
+import s from '../styles/Galleries.module.css';
 
 function Galleries() {
     const [order, setOrder] = useState([]); //заказ управляется по кнопке купить
@@ -64,6 +65,7 @@ function Galleries() {
 
 
     return <>
+    <main className={s.main}>
         <Heading text="Galleries:" />
         <Container
             sx={{
@@ -83,6 +85,7 @@ function Galleries() {
             isOpen={isSnackOpen}
             handleClose={() => setSnackOpen(false)}
         />
+        </main>
     </>
 }
 

@@ -1,7 +1,6 @@
 import Heading from "../components/Heading";
-//import Image from 'next/image';
 import { Typography, Container } from "@mui/material";
-//import s from '../styles/About.module.css';
+import s from '../styles/About.module.css';
 import ImageList from '@mui/material/ImageList';
 import ImageListItem from '@mui/material/ImageListItem';
 
@@ -28,7 +27,8 @@ const data = [
 
 function About() {
   return <>
-    <Container maxWidth='sm'>
+  <main className={s.main}>
+      <Container  maxWidth='sm'>
       <Heading text="About us:" />
       <Typography
         variant="h6"
@@ -60,6 +60,7 @@ function About() {
         Свежие фрукты, свежие яйца, чистые взбитые сливки и сладкое масло (без искусственных ароматизаторов и консервантов) делают вкус торта Iris Backer таким же изысканным, как и внешний вид. Но хотя они выглядят невероятно богатыми, вкус удивительно легкий и нюансированный. В сочетании с бесконечным выбором слоев торта, глазури и начинки уникальный  тонкий вкус сделает торты Iris Backer незабываемым для всех в вашем списке гостей.
       </Typography>
     </Container>
+    </main>
   </>
 }
 
