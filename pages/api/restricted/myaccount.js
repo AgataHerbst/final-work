@@ -16,7 +16,7 @@ export default async function handler(req, res) {
           user: await prisma.user.findUnique({
             where: { id: session?.user?.id }
           }),
-          accouts: await prisma.account.findMany({
+          accounts: await prisma.account.findMany({
             where: { userId: session?.user?.id }
           })
         });
