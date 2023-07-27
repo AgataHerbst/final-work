@@ -9,8 +9,9 @@ import { PrismaClient } from "@prisma/client";
 
 const prisma = new PrismaClient();
 
-const authOptions = {
+export const authOptions = {
   adapter: PrismaAdapter(prisma),
+  debug: true,
   providers: [
     GoogleProvider({
       clientId: process.env.GOOGLE_CLIENT_ID,
@@ -25,16 +26,34 @@ const authOptions = {
       clientSecret: process.env.GITHUB_SECRET
     }),
 
-       
-      
-  ]
-}
-
-export default NextAuth(authOptions)
-export const getServerAuthSession = (req, res) => {
-return getServerAuthSession(req, res, authOptions)
-
+   ],
+   callbacks: {
+    async signIn({ user, account, profile, email, credentials }) {
+      // console.debug('>> callback signIn', { user, account, profile, email, credentials });
+      return true;
+    },
+    async redirect({ url, baseUrl }) {
+      // console.debug('>> callback redirect', { url, baseUrl });
+      return baseUrl;
+    },
+    async session({ session, user, token }) {
+      // console.debug('>> callback session', { session, user, token });
+      session.user.id = user.id;
+      session.user.role = user.role;
+      return session;
+    },
+    async jwt({ token, user, account, profile, isNewUser }) {
+      // console.debug('>> callback jwt', { token, user, account, profile, isNewUser });
+      return token;
+    }
+  }
 };
 
+const resf = NextAuth(authOptions);
 
-
+export default (...params) => {
+  const [req] = params;
+  // console.log('pages/api/auth/[...nextauth].js ');
+  // console.log('>> ', req.method, ' запрос на', req.url, req.query);
+  return resf(...params);
+};
