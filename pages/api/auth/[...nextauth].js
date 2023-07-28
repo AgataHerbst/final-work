@@ -8,25 +8,25 @@ import { PrismaClient } from "@prisma/client";
 
 
 const prisma = new PrismaClient();
+const providers = [
+  GoogleProvider({
+    clientId: process.env.GOOGLE_CLIENT_ID,
+    clientSecret: process.env.GOOGLE_CLIENT_SECRET
+  }),
+  YandexProvider({
+    clientId: process.env.YANDEX_CLIENT_ID,
+    clientSecret: process.env.YANDEX_CLIENT_SECRET
+  }),
+  GitHubProvider({
+    clientId: process.env.GITHUB_ID,
+    clientSecret: process.env.GITHUB_SECRET
+  }) ];
+  console.debug('Убеждаемся что все ENV есть\n',providers);
 
 export const authOptions = {
   adapter: PrismaAdapter(prisma),
   debug: true,
-  providers: [
-    GoogleProvider({
-      clientId: process.env.GOOGLE_CLIENT_ID,
-      clientSecret: process.env.GOOGLE_CLIENT_SECRET
-    }),
-    YandexProvider({
-      clientId: process.env.YANDEX_CLIENT_ID,
-      clientSecret: process.env.YANDEX_CLIENT_SECRET
-    }),
-    GitHubProvider({
-      clientId: process.env.GITHUB_ID,
-      clientSecret: process.env.GITHUB_SECRET
-    }),
-
-   ],
+  providers ,
    callbacks: {
     async signIn({ user, account, profile, email, credentials }) {
        console.debug('>> callback signIn', { user, account, profile, email, credentials });
