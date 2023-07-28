@@ -8,6 +8,7 @@ import { PrismaClient } from "@prisma/client";
 
 
 const prisma = new PrismaClient();
+console.debug('Убеждаемся что все ENV есть\n',process.env);
 
 export const authOptions = {
   adapter: PrismaAdapter(prisma),
