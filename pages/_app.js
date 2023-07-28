@@ -42,24 +42,24 @@ function MyApp({ Component,
                     handleCart={setCartOpen}
                     orderLen={10}
                 />
+                <Component {...pageProps} />
+                <Container fixed >
+                    <Footer />
+                </Container>
+                <Basket
+                    order={order}
+                    removeFromOrder={removeFromOrder}
+                    cartOpen={isCartOpen}
+                    closeCart={() => setCartOpen(false)}
+                />
             </ThemeProvider>
-            <Component {...pageProps} />
-            <Container fixed >
-                <Footer />
-            </Container>
-            <Basket
-                order={order}
-                removeFromOrder={removeFromOrder}
-                cartOpen={isCartOpen}
-                closeCart={() => setCartOpen(false)}
-            />
         </SessionProvider>
-        </>
+    </>
 }
 export default MyApp;
 
 
 
-   
+
 
 
