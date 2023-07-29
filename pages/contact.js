@@ -1,18 +1,21 @@
 import Heading from "../components/Heading";
 import s from '../styles/Contact.module.css';
 import Image from 'next/image';
-import smallPic from '../public/contact/color.jpg';
+import { Container } from '@mui/material';
+import largePic from '../public/contact/color.jpg';
 
 function Contact() {
   return <>
-    <Heading text="Контакты:" />
+    
     <div className={s.contact}>
-    <Image src={smallPic}
-      alt='car'
+    <Image
+      src={largePic}
+      alt='Mountain landscape'
       placeholder="blur"
       style={{objectFit: 'cover'}}
-      />
-   
+    />
+    <Container>
+    <Heading text="Контакты:" />
       <div className={s.rightSide}>
         <form className={s.form} id="contact-form" method="POST">
           <label htmlFor="name"> Полное имя </label>
@@ -30,6 +33,7 @@ function Contact() {
           <button className={s.button} type="submit"> Отправить сообщение </button>
         </form>
       </div>
+      </Container>
     </div>
   </>
 }
