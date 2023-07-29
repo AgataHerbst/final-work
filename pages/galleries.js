@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import Heading from "../components/Heading";
-
+import { Container } from '@mui/material';
 import GoodsList from '../components/GoodsList';
 import Search from '../components/Search';
 import Snack from '../components/Snack';

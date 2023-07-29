@@ -6,18 +6,17 @@ import largePic from '../public/contact/color.jpg';
 
 function Contact() {
   return <>
-    
     <div className={s.contact}>
     <Image
       src={largePic}
-      alt='Mountain landscape'
+      alt='color'
       placeholder="blur"
       style={{objectFit: 'cover'}}
     />
     <Container>
     <Heading text="Контакты:" />
       <div className={s.rightSide}>
-        <form className={s.form} id="contact-form" method="POST">
+        <form className={s.form}>
           <label htmlFor="name"> Полное имя </label>
           <input name="name" placeholder="Введите полное имя..." type="text" />
           <label htmlFor="email"> Email </label>
