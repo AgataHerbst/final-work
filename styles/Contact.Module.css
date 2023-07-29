@@ -3,6 +3,13 @@
     height: 90vh;
     display: flex;
   }
+  .rightSide {
+    height: 100%;
+    flex: 50%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
   .form {
     display: flex;
     flex-direction: column;
@@ -11,7 +18,7 @@
     padding: 30px;
   }
   
-  .form input {
+  .input {
     height: 40px;
     width: 80%;
     border: none;
@@ -19,7 +26,7 @@
     color: black;
   }
   
-  .form textarea {
+  .textarea {
     margin-top: 15px;
     height: 70px;
     width: 80%;
@@ -38,19 +45,11 @@
     outline: none;
   }
   
-  .form label {
+  .label {
     margin-top: 15px;
     color: grey;
   }
-  .rightSide {
-    height: 100%;
-    flex: 50%;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-  }
-  
-  .button {
+ .button {
     margin-top: 40px;
     width: 140px;
     height: 40px;

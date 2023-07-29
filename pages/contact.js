@@ -1,4 +1,4 @@
-import Heading from "../components/Heading";
+import Heading from '../components/Heading';
 import s from '../styles/Contact.module.css';
 import Image from 'next/image';
 import { Container } from '@mui/material';
@@ -17,11 +17,11 @@ function Contact() {
     <Heading text="Контакты:" />
       <div className={s.rightSide}>
         <form className={s.form}>
-          <label htmlFor="name"> Полное имя </label>
-          <input name="name" placeholder="Введите полное имя..." type="text" />
-          <label htmlFor="email"> Email </label>
+          <label className={s.label} htmlFor="name"> Полное имя </label>
+          <input className={s.input} name="name" placeholder="Введите полное имя..." type="text" />
+          <label className={s.label} htmlFor="email"> Email </label>
           <input className={s.input} name="email" placeholder="Введите email..." type="email" />
-          <label htmlFor="message"> Сообщение </label>
+          <label className={s.label} htmlFor="message"> Сообщение </label>
           <textarea className={s.textarea}
             rows="6"
             placeholder="Введите ваш вопрос..."
