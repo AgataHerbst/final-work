@@ -34,7 +34,7 @@ function MyApp({ Component,
     const removeFromOrder = (goodsItem) => {
         setOrder(order.filter((item) => item.id !== goodsItem));
     };
-    console.log(Component.auth)
+    //console.log(Component.auth)
     return <>
         <SessionProvider session={session}>
             <ThemeProvider theme={theme}>
