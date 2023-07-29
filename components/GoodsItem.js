@@ -1,4 +1,5 @@
 import { Grid, Card, CardMedia, CardContent, Typography, CardActions, Button } from '@mui/material';
+import s from '../styles/GoodsItem.module.css';
 
 const GoodsItem = (props) => {
     const { name, price, img, setOrder } = props;
@@ -27,7 +28,7 @@ const GoodsItem = (props) => {
                         variant='body1'>Цена: {price} руб.</Typography>
                 </CardContent>
                 <CardActions>
-                    <Button
+                    <Button className={s.button}
                         variant='text'
                         onClick={() =>
                             setOrder({

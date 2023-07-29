@@ -1,11 +1,18 @@
 //import '../styles.css'
-import Heading from "./Heading";
+import s from '../styles/Footer.module.css';
+import InstagramIcon from "@mui/icons-material/Instagram";
+import GoogleIcon from "@mui/icons-material/Google";
+
 
 function Footer() {
    return <>
-      <footer>
-         <Heading tag="h3" text="&copy; 2023 IrisBackery.com" />
+      <footer className={s.footer}>
+      <div className={s.heading}>&copy; 2023 IrisBackery.com</div>
       </footer>
+      <div className={s.social}>
+      <InstagramIcon sx={{ fontSize: 30 }}/>
+      <GoogleIcon sx={{ fontSize: 30 }}/>
+      </div>
    </>
 }
 

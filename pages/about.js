@@ -29,7 +29,7 @@ function About() {
   return <>
   <main className={s.main}>
       <Container  maxWidth='sm'>
-      <Heading text="About us:" />
+      <Heading text="Обо мне:" />
       <Typography
         variant="h6"
         component="span"

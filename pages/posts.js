@@ -2,7 +2,7 @@ import Heading from "../components/Heading";
 
 function Posts() {
   return <>
-    <Heading text="Post list:" />
+    <Heading text="Отзывы клиентов:" />
   </>
 }
 

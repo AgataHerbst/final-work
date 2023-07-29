@@ -31,7 +31,6 @@ function Navbar({ handleCart, orderLen }) {
                     <Image src="/logos1.jpg" width="60" height="60" alt="cake" />
                     IrisBacker
                 </Typography>
-
                 <div className={s.navbar}>
                     {pages.filter(page => page?.restricted
                         ? page.restricted(session)

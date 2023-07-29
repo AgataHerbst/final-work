@@ -1,0 +1,14 @@
+.footer {
+    display: flex;
+    justify-content: center;
+    align-items: baseline
+}
+
+.heading {
+    font-weight: bold;
+    text-align: center;
+    font-size: 25px;
+}
+.social{
+    text-align: center;
+}

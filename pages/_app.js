@@ -11,19 +11,19 @@ import '../styles/globals.css';
 const theme = createTheme({
     palette: {
         primary: {
-            light: '#757ce8',
-            main: '#FFE4B5',
+            light: '#AFEEEE',
+            main: '#8FBC8F',
             dark: '#002884',
             contrastText: '#fff',
         },
         secondary: {
             light: '#ff7961',
-            main: '#FF8C00',
+            main: '#FF6347',
             dark: '#ba000d',
             contrastText: '#000',
         },
     },
-});
+    });
 
 function MyApp({ Component,
     pageProps: { session, ...pageProps }
