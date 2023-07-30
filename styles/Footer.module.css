@@ -1,7 +1,8 @@
 .footer {
     display: flex;
     justify-content: center;
-    align-items: baseline
+    align-items: baseline;
+    padding: 50px;
 }
 
 .heading {

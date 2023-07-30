@@ -8,11 +8,11 @@ import Link from "next/link";
 import { AppBar, IconButton, Toolbar, Typography, Badge } from "@mui/material";
 
 const pages = [
-    { name: 'Home', src: '/' },
-    { name: 'About', src: '/about' },
-    { name: 'Galleries', src: '/galleries' },
-    { name: 'Posts', src: '/posts' },
-    { name: 'Contact', src: '/contact' },
+    { name: 'Домой', src: '/' },
+    { name: 'Обо мне', src: '/about' },
+    { name: 'Галлерея', src: '/galleries' },
+    { name: 'Отзывы', src: '/posts' },
+    { name: 'Контакты', src: '/contact' },
     { name: 'Admin', src: '/admin', restricted(session) { return 'admin' === session?.user?.role; } }
 ];
 

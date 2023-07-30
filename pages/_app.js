@@ -6,7 +6,7 @@ import Navbar from '../components/Navbar';
 import Basket from '../components/Basket';
 import { Container } from "@mui/material";
 import { createTheme, ThemeProvider } from '@mui/material/styles';
-import '../styles/globals.css';
+import '../styles/global.css';
 
 const theme = createTheme({
     palette: {

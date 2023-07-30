@@ -1,29 +1,10 @@
+import Link from 'next/link';
 import Heading from "../components/Heading";
 import Image from 'next/image';
-import { red } from '@mui/material/colors';
-import { Container, Typography } from "@mui/material";
+import { Container, Typography, Button } from "@mui/material";
 import ImageList from '@mui/material/ImageList';
 import ImageListItem from '@mui/material/ImageListItem';
-import { createTheme, ThemeProvider } from '@mui/material/styles';
 
-const color = red[500];
-
-const theme = createTheme({
-  typography: {
-    fontFamily: [
-      '-apple-system',
-      'BlinkMacSystemFont',
-      '"Segoe UI"',
-      'Roboto',
-      '"Helvetica Neue"',
-      'Arial',
-      'sans-serif',
-      '"Apple Color Emoji"',
-      '"Segoe UI Emoji"',
-      '"Segoe UI Symbol"',
-    ].join(','),
-  },
-});
 
 const data = [
   {
@@ -40,21 +21,23 @@ const data = [
 
 function Home() {
   return <>
-  <Container fixed>
-  <Heading text="Iris Backer" />
-    <Image src="/backer/chef2.jpg" width={250} height={250} alt="chef" />
-    <ThemeProvider theme={theme}>
-    <Typography
+    <Container
+      sx={{
+        mt: '1rem'
+      }}>
+      <Heading text="Iris Backer" />
+      <Link href='galleries'><Button variant="contained">Все торты</Button></Link>
+      <Image src="/backer/chef2.jpg" width={250} height={250} alt="chef" />
+      <Typography
         variant="h3"
         component="span"
-        sx={{ flexGrow: 2,
-        fontFamily: "Roboto",
-        color:"red"
+        sx={{
+          flexGrow: 2,
+          fontFamily: "Roboto",
+          color: "red"
         }}
-
-      >CAKES TO FIT ANY TASTE
+       >ТОРТЫ НА ЛЮБОЙ ВКУС
       </Typography>
-      </ThemeProvider>
       <ImageList sx={{ width: 1100, height: 600 }} ariant="woven" cols={3} gap={9}>
         {data.map((item) => (
           <ImageListItem key={item.img}>
@@ -70,7 +53,6 @@ function Home() {
         ))}
       </ImageList>
     </Container>
-
   </>
 
 }

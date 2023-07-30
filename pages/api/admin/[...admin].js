@@ -4,8 +4,6 @@ import { PrismaClient } from '@prisma/client';
 
 
 const prisma = new PrismaClient({
-  // log: ['query','info'],
-  // errorFormat:'pretty'
 });
 
 export default async function handler(req, res) {

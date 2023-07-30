@@ -65,26 +65,28 @@ function Galleries() {
 
 
     return <>
-    <main className={s.main}>
-        <Heading text="Galleries:" />
-        <Container
-            sx={{
-                mt: '1rem'
-            }}>
-            <Search
-                value={search}
-                onChange={handleChange}
-            />
-            <GoodsList
-                goods={products}
-                setOrder={addToOrder}
-            />
+        <main className={s.main}>
+            <div className={s.galleriesHead}>
+            <Heading text="Мои работы:" />
+            </div>
+            <Container
+                sx={{
+                    mt: '1rem'
+                }}>
+                <Search
+                    value={search}
+                    onChange={handleChange}
+                />
+                <GoodsList
+                    goods={products}
+                    setOrder={addToOrder}
+                />
 
-        </Container>
-        <Snack
-            isOpen={isSnackOpen}
-            handleClose={() => setSnackOpen(false)}
-        />
+            </Container>
+            <Snack
+                isOpen={isSnackOpen}
+                handleClose={() => setSnackOpen(false)}
+            />
         </main>
     </>
 }
