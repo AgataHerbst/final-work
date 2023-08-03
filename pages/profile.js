@@ -1,6 +1,7 @@
 import { useSession, signIn, signOut } from 'next-auth/react';
 import { authOptions } from 'pages/api/auth/[...nextauth]'
 import { getServerSession } from "next-auth/next";
+import { IconButton } from '@mui/material';
 
 
 export default function Component (){
@@ -9,17 +10,17 @@ export default function Component (){
 if (session) {
     return (
         <>
-        Signed in as {session.user?.email} <br /> 
+        Вы вошли, как: {session.user?.email} <br /> 
         {session?.user?.image && <img src={session.user.image} alt='avatar' />}
          {session?.user?.name} <br />
-        <button onClick={() =>signOut()}>Sign out</button>
+        <button onClick={() =>signOut()}>Выйти</button>
         </>
     )
 }
 return (
     <>
-    Not signed in <br />
-    <button onClick={() => signIn()}>Sign in</button>
+    Не авторизован! <br />
+    <IconButton onClick={() => signIn()}>Войти</IconButton>
     </>
 )
 }
