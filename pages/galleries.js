@@ -62,8 +62,6 @@ function Galleries() {
         }
         setSnackOpen(true);
     };
-
-
     return <>
         <main className={s.main}>
             <div className={s.galleriesHead}>

@@ -26,7 +26,7 @@ function Home() {
         mt: '1rem'
       }}>
       <Heading text="Iris Backer" />
-      <Link href='galleries'><Button variant="contained">Все торты</Button></Link>
+     <Link href='galleries'><Button variant="contained">Все торты</Button></Link>
       <Image src="/backer/chef2.jpg" width={250} height={250} alt="chef" />
       <Typography
         variant="h3"

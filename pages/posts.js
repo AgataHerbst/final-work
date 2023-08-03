@@ -1,7 +1,7 @@
 import Heading from "../components/Heading";
 import s from '../styles/Post.module.css';
 import { Container } from '@mui/material';
-import { UTurnLeftSharp } from "@mui/icons-material";
+
 
 function Posts({posts}) {
 //console.log(posts)

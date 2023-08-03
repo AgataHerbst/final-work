@@ -1,17 +1,16 @@
 import Heading from '../components/Heading';
 import s from '../styles/Contact.module.css';
 import Image from 'next/image';
-import { Container } from '@mui/material';
+import { Container, Grid } from '@mui/material';
 
 
 function Contact() {
   return <>
     <div className={s.contact}>
-      <Image src="/contact/color.jpg" width={800} height={1100} alt="chef" />
+      <Grid item xs={12} md={4}>
+      <Image src="/contact/color.jpg" width={600} height={1000} alt="chef" /></Grid>
       <Container
-        sx={{
-          mt: '1rem'
-        }}>
+       >
         <Heading text="Контакты:" />
         <div className={s.rightSide}>
           <form className={s.form}>

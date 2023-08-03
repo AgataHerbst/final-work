@@ -26,6 +26,7 @@ const data = [
 ]
 
 function About() {
+ 
   return <>
     <main className={s.main}>
       <Container maxWidth='sm'>
@@ -48,7 +49,7 @@ function About() {
               </ImageListItem>
             ))}
           </ImageList>
-        </Typography>
+      </Typography>
       </Container>
       <Container maxWidth='lg'>
         <Typography
@@ -58,8 +59,8 @@ function About() {
         >Я вас приветствую, мои Дорогие Гости!<br />
           Меня зовут Иришка и я очень люблю печь и изготавливать всевозможные торты. Для своих тортов я использую только натуральные продукты, чтобы вкус моей выпечки навсегда остался в вашей вкусовой памяти. Каждый день я нахожу новые идеи для своих шедевров и воплощаю их в жизнь, чтобы радовать тех, кто ОБОЖАЕТ вкусные сладости!!!
         </Typography>
-      </Container>
-    </main>
+     </Container>
+      </main>
   </>
 }
 

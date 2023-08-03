@@ -1,9 +1,9 @@
 import { ShoppingCart } from "@mui/icons-material";
 import { useRouter } from 'next/router';
-import { useSession } from 'next-auth/react';
 import s from '../styles/Navbar.module.css';
-import Login from '../components/Login';
 import Image from 'next/image';
+import Login from '../components/Login';
+//import AccountCircleIcon from '@mui/icons-material/AccountCircle';
 import Link from "next/link";
 import { AppBar, IconButton, Toolbar, Typography, Badge } from "@mui/material";
 
@@ -13,13 +13,11 @@ const pages = [
     { name: 'Галлерея', src: '/galleries' },
     { name: 'Отзывы', src: '/posts' },
     { name: 'Контакты', src: '/contact' },
-    { name: 'Admin', src: '/admin', restricted(session) { return 'admin' === session?.user?.role; } }
 ];
 
 function Navbar({ handleCart, orderLen }) {
-
-    const router = useRouter(); //путь текущей страницы
-    const { data: session } = useSession();
+    const {pathname}  = useRouter(); //путь текущей страницы
+    
     return (
         <AppBar position="static">
             <Toolbar>
@@ -32,19 +30,16 @@ function Navbar({ handleCart, orderLen }) {
                     IrisBacker
                 </Typography>
                 <div className={s.navbar}>
-                    {pages.filter(page => page?.restricted
-                        ? page.restricted(session)
-                        : true)
-                        .map(({ name, src }) =>
+                    {pages.map(({ name, src }) =>
                             <div key={name}
-                                className={router.pathname === src
+                                className={pathname === src
                                     ? 'active'
                                     : ''}>
                                 <Link href={src} className="link">{name}</Link>
                             </div>
                         )}
-                    <div><Login /></div>
-                </div>
+                         <div><Login /></div>
+                        </div>
                 <IconButton
                     color="inherit"
                     onClick={handleCart}
