@@ -3,9 +3,9 @@ import { useRouter } from 'next/router';
 import s from '../styles/Navbar.module.css';
 import Image from 'next/image';
 import Login from '../components/Login';
-//import AccountCircleIcon from '@mui/icons-material/AccountCircle';
 import Link from "next/link";
-import { AppBar, IconButton, Toolbar, Typography, Badge } from "@mui/material";
+import { AppBar, Button, Toolbar, Typography, Badge } from "@mui/material";
+import { useShoppingCart } from "../context/ShoppingCartContext"
 
 const pages = [
     { name: 'Домой', src: '/' },
@@ -15,9 +15,10 @@ const pages = [
     { name: 'Контакты', src: '/contact' },
 ];
 
-function Navbar({ handleCart, orderLen }) {
-    const {pathname}  = useRouter(); //путь текущей страницы
-    
+function Navbar() {
+    const { openCart, cartQuantity } = useShoppingCart()
+    const { pathname } = useRouter(); //путь текущей страницы
+
     return (
         <AppBar position="static">
             <Toolbar>
@@ -31,27 +32,28 @@ function Navbar({ handleCart, orderLen }) {
                 </Typography>
                 <div className={s.navbar}>
                     {pages.map(({ name, src }) =>
-                            <div key={name}
-                                className={pathname === src
-                                    ? 'active'
-                                    : ''}>
-                                <Link href={src} className="link">{name}</Link>
-                            </div>
-                        )}
-                         <div><Login /></div>
+                        <div key={name}
+                            className={pathname === src
+                                ? 'active'
+                                : ''}>
+                            <Link href={src} className="link">{name}</Link>
                         </div>
-                <IconButton
+                    )}
+                    <div><Login /></div>
+                </div>
+                <Button
                     color="inherit"
-                    onClick={handleCart}
+                    onClick={openCart}
                 >
                     <Badge
                         color='secondary'
-                        badgeContent={orderLen}
+
                     >
                         <ShoppingCart
                         />
                     </Badge>
-                </IconButton>
+                    {cartQuantity}
+                </Button>
             </Toolbar>
         </AppBar>
 

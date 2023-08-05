@@ -7,6 +7,8 @@ import Basket from '../components/Basket';
 import { Container } from "@mui/material";
 import { createTheme, ThemeProvider } from '@mui/material/styles';
 import '../styles/global.css';
+import 'bootstrap/dist/css/bootstrap.min.css';
+import { ShoppingCartProvider } from '@/context/ShoppingCartContext';
 
 
 
@@ -30,7 +32,7 @@ const theme = createTheme({
 function MyApp({ Component,
     pageProps: { session, ...pageProps }
 }) {
-    const [order, setOrder] = useState([]);
+  const [order, setOrder] = useState([]);
     const [isCartOpen, setCartOpen] = useState(false);
 
     const removeFromOrder = (goodsItem) => {
@@ -38,6 +40,7 @@ function MyApp({ Component,
     };
   
     return <>
+    <ShoppingCartProvider>
         <SessionProvider session={session}>
             <ThemeProvider theme={theme}>
                 <Navbar
@@ -53,13 +56,14 @@ function MyApp({ Component,
                     removeFromOrder={removeFromOrder}
                     cartOpen={isCartOpen}
                     closeCart={() => setCartOpen(false)}
+                   
                 />
-            </ThemeProvider>
+                </ThemeProvider>
         </SessionProvider>
+        </ShoppingCartProvider>
     </>
 }
 export default MyApp;
-
 
 
 

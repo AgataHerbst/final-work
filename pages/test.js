@@ -79,8 +79,7 @@ function Galleries() {
                     goods={products}
                     setOrder={addToOrder}
                 />
-
-            </Container>
+           </Container>
             <Snack
                 isOpen={isSnackOpen}
                 handleClose={() => setSnackOpen(false)}

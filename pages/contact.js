@@ -2,9 +2,12 @@ import Heading from '../components/Heading';
 import s from '../styles/Contact.module.css';
 import Image from 'next/image';
 import { Container, Grid } from '@mui/material';
+import { Prisma } from '@prisma/client';
+import { useRouter } from 'next/router';
 
 
-function Contact() {
+function Contact({posts}) {
+  const router = useRouter()
   return <>
     <div className={s.contact}>
       <Grid item xs={12} md={4}>

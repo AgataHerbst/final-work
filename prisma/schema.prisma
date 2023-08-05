@@ -11,6 +11,31 @@ datasource db {
   shadowDatabaseUrl = env("POSTGRES_URL_NON_POOLING") // used for migrations
 }
 
+model User {
+  id            String    @id @default(cuid())
+  name          String?
+  email         String?   @unique
+  emailVerified DateTime?
+  image         String?
+  accounts      Account[]
+  sessions      Session[]
+  posts         Post[]
+  }
+
+model Post {
+  id            Int     @id @default(autoincrement()) //номер поста
+  title         String
+  code          String  @db.Text
+  language      String
+  totalLikes    Int    @default(0)
+  totalComments Int @default(0)
+  createAt      DateTime @default(now()) //время создания
+  updateAt      DateTime @updatedAt
+  userId        String 
+  user          User     @relation(fields: [userId], references: [id])
+ 
+}
+
 model Account {
   id                       String  @id @default(cuid())
   userId                   String
@@ -39,17 +64,7 @@ model Session {
   user         User     @relation(fields: [userId], references: [id], onDelete: Cascade)
 }
 
-model User {
-  id            String    @id @default(cuid())
-  name          String?
-  email         String?   @unique
-  emailVerified DateTime?
-  image         String?
-  accounts      Account[]
-  sessions      Session[]
-  posts         Post[]
-  basketGoods   BasketGoods[]
-}
+
 
 model VerificationToken {
   identifier String
@@ -58,35 +73,5 @@ model VerificationToken {
 
   @@unique([identifier, token])
 }
-model Post {
-  id        Int     @id @default(autoincrement()) //номер поста
-  content   String? //содержание
-  createAt  DateTime @default(now()) //время создания
-  updateAt  DateTime @updatedAt
-  userId    String 
-  user      User     @relation(fields: [userId], references: [id])
- 
-}
-model BasketGoods { //корзина товаров
-  id        Int      @id @unique //номер заказа
-  userId    String
-  user      User      @relation(fields: [userId], references: [id])
-  total     Float //всего
-  createdAt DateTime @default(now()) //время и дата заказа
-  updatedAt DateTime @updatedAt
-  Goods     Goods[] //масив товаров
-}
 
-model Goods {//товары
-  id            Int          @id @default(autoincrement())
-  name          String //название товара
-  createdAt     DateTime     @default(now()) 
-  updatedAt     DateTime     @updatedAt
-  BasketGoods   BasketGoods? @relation(fields: [basketGoodsId], references: [id])
-  basketGoodsId Int?
-}
-enum BasketState {
-  ACTIVE
-  EXPIRED
-  COMPLETED
-}
+
