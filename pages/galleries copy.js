@@ -72,9 +72,6 @@ function Galleries() {
     };
 
     return <>
-        <Head1
-            handleCart={() => setCartOpen(true)}
-            orderLen={order.length} />
         <Head>
             <title>Galleries</title>
         </Head>
