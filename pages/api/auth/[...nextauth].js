@@ -20,7 +20,7 @@ export const authOptions = {
     clientSecret: process.env.GITHUB_SECRET,
   }) 
 ],
-/*callbacks: {
+callbacks: {
   async signIn({ user, account, profile, email, credentials }) {
      console.debug('>> callback signIn', { user, account, profile, email, credentials });
     return true;
@@ -39,7 +39,7 @@ export const authOptions = {
      console.debug('>> callback jwt', { token, user, account, profile, isNewUser });
     return token;
   }
-}*/
+}
 };
 
 const resf = NextAuth(authOptions);
