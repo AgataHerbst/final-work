@@ -1,4 +1,3 @@
-import { useLocalStorage } from "@/hooks/useLocalStorage";
 import { createContext, ReactNode, useContext, useState } from "react";
 import { ShoppingCart } from "../components/ShoppingCart";
 
