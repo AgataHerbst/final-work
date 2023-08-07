@@ -39,7 +39,7 @@ export function StoreItem({ id, name, price, img }: StoreItemProps) {
                 </Card.Title>
                 <div className='mt-auto'>
                     {quantity === 0 ? (
-                        <Button className='w-100' onClick={() => increaseCartQuantity(id)}>
+                        <Button className='w-100' onClick={() => increaseCartQuantity(id)} variant='success' >
                             Купить</Button>
                     ) :
                         <div
@@ -51,13 +51,13 @@ export function StoreItem({ id, name, price, img }: StoreItemProps) {
             justify-content-center'
                                 style={{ gap: '5.rem' }}
                             >
-                                <Button onClick={() => decreaseCartQuantity(id)}>-</Button>
+                                <Button onClick={() => decreaseCartQuantity(id)}variant='secondary' >-</Button>
                                 <div>
                                     <span className='fs-3'>{quantity}</span>в корзину
                                 </div>
-                                <Button onClick={() => increaseCartQuantity(id)}>+</Button>
+                                <Button onClick={() => increaseCartQuantity(id)} variant='secondary'>+</Button>
                             </div>
-                            <Button onClick={() => removeFromCart(id)} variant='danger' size='sm'>Удалить</Button>
+                            <Button onClick={() => removeFromCart(id)} variant='success' size='sm'>Удалить</Button>
                         </div>}
                 </div>
             </Card.Body>
