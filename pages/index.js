@@ -1,5 +1,5 @@
 import Link from 'next/link';
-import Heading from "../components/Heading";
+//import Heading from "../components/Heading";
 import Image from 'next/image';
 import { Container, Typography, Button } from "@mui/material";
 import ImageList from '@mui/material/ImageList';
@@ -25,8 +25,7 @@ function Home() {
       sx={{
         mt: '1rem'
       }}>
-      <Heading text="Iris Backer" />
-     <Link href='galleries'><Button variant="contained">Все торты</Button></Link>
+      <Link href='galleries'><Button variant="contained">Все торты</Button></Link>
       <Image src="/backer/chef2.jpg" width={250} height={250} alt="chef" />
       <Typography
         variant="h3"

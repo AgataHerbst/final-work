@@ -47,7 +47,6 @@ function Navbar() {
                 >
                     <Badge
                         color='secondary'
-
                     >
                         <ShoppingCart
                         />
