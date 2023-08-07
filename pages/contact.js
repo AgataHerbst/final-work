@@ -2,19 +2,21 @@ import Heading from '../components/Heading';
 import s from '../styles/Contact.module.css';
 import Image from 'next/image';
 import { Container, Grid } from '@mui/material';
-import { Prisma } from '@prisma/client';
+//import { Prisma } from '@prisma/client';
 import { useRouter } from 'next/router';
 
 
-function Contact({posts}) {
+function Contact() {
   const router = useRouter()
   return <>
+    <Container fixed>
+   <Heading text="Контакты:" />
+
     <div className={s.contact}>
       <Grid item xs={12} md={4}>
-      <Image src="/contact/color.jpg" width={600} height={1000} alt="chef" /></Grid>
-      <Container
-       >
-        <Heading text="Контакты:" />
+      <Image src="/contact/color.jpg" width={300} height={700} alt="chef" /></Grid>
+     
+        
         <div className={s.rightSide}>
           <form className={s.form}>
             <label className={s.label} htmlFor="name"> Полное имя </label>
@@ -32,8 +34,8 @@ function Contact({posts}) {
             <button className={s.button} type="submit"> Отправить сообщение </button>
           </form>
         </div>
-      </Container>
-    </div>
+        </div>
+    </Container>
   </>
 }
 

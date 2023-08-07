@@ -1,10 +1,9 @@
 import Link from 'next/link';
-//import Heading from "../components/Heading";
+import Heading from "../components/Heading";
 import Image from 'next/image';
 import { Container, Typography, Button } from "@mui/material";
 import ImageList from '@mui/material/ImageList';
 import ImageListItem from '@mui/material/ImageListItem';
-
 
 const data = [
   {
@@ -21,10 +20,8 @@ const data = [
 
 function Home() {
   return <>
-    <Container
-      sx={{
-        mt: '1rem'
-      }}>
+    <Heading />
+    <Container fixed>
       <Link href='galleries'><Button variant="contained">Все торты</Button></Link>
       <Image src="/backer/chef2.jpg" width={250} height={250} alt="chef" />
       <Typography
@@ -51,7 +48,7 @@ function Home() {
           </ImageListItem>
         ))}
       </ImageList>
-    </Container>
+      </Container>
   </>
 
 }
