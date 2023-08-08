@@ -4,7 +4,7 @@ import s from '../styles/Navbar.module.css';
 import Image from 'next/image';
 import Login from '../components/Login';
 import Link from "next/link";
-import { AppBar, Button, Toolbar, Typography, Badge } from "@mui/material";
+import { AppBar, Button, Toolbar, Typography } from "@mui/material";
 import { useShoppingCart } from "../context/ShoppingCartContext"
 
 const pages = [
@@ -13,6 +13,7 @@ const pages = [
     { name: 'Галлерея', src: '/galleries' },
     { name: 'Отзывы', src: '/posts' },
     { name: 'Контакты', src: '/contact' },
+    { name: 'Тест', src: '/test' },
 ];
 
 function Navbar() {
@@ -27,7 +28,7 @@ function Navbar() {
                     component="span"
                     sx={{ flexGrow: 1 }}
                 >
-                    <Image src="/logos1.jpg" width="60" height="60" alt="cake" />
+                <Image src="/logos1.jpg" width="60" height="60" alt="cake" />
                     IrisBacker
                 </Typography>
                 <div className={s.navbar}>
@@ -45,12 +46,8 @@ function Navbar() {
                     color="inherit"
                     onClick={openCart}
                 >
-                    <Badge
-                        color='secondary'
-                    >
-                        <ShoppingCart
-                        />
-                    </Badge>
+                    <ShoppingCart
+                    />
                     {cartQuantity}
                 </Button>
             </Toolbar>

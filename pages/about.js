@@ -29,13 +29,9 @@ function About() {
  
   return <>
     <main className={s.main}>
-      <Container maxWidth='sm'>
+      <Container fixed>
         <Heading text="Обо мне:" />
-        <Typography
-          variant="h6"
-          component="span"
-          sx={{ flexGrow: 1 }}
-        >
+      
           <ImageList sx={{ width: 600, height: 600 }} cols={3} rowHeight={164}>
             {data.map((item) => (
               <ImageListItem key={item.img}>
@@ -49,18 +45,16 @@ function About() {
               </ImageListItem>
             ))}
           </ImageList>
-      </Typography>
-      </Container>
-      <Container maxWidth='lg'>
-        <Typography
+        
+         <Typography
           variant="h6"
           component="span"
           sx={{ flexGrow: 1 }}
         >Я вас приветствую, мои Дорогие Гости!<br />
           Меня зовут Иришка и я очень люблю печь и изготавливать всевозможные торты. Для своих тортов я использую только натуральные продукты, чтобы вкус моей выпечки навсегда остался в вашей вкусовой памяти. Каждый день я нахожу новые идеи для своих шедевров и воплощаю их в жизнь, чтобы радовать тех, кто ОБОЖАЕТ вкусные сладости!!!
         </Typography>
-     </Container>
-      </main>
+        </Container>
+     </main>
   </>
 }
 

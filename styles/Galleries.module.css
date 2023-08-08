@@ -5,8 +5,4 @@
     color: black;
     font-size: 20px;
   }
-  .galleriesHead{
-  display: flex;
-  flex-direction: column;
-  font-size: 20px;
-  }
+ 

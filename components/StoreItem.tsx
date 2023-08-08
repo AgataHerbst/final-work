@@ -1,6 +1,6 @@
 import { formatCurrency } from '@/utilities/FormatCurrency';
 import { Button, Card } from 'react-bootstrap';
-import { useShoppingCart } from "../context/ShoppingCartContext"
+import { useShoppingCart } from "../context/ShoppingCartContext";
 
 
 type StoreItemProps = {
@@ -20,7 +20,7 @@ export function StoreItem({ id, name, price, img }: StoreItemProps) {
     const quantity = getItemQuantity(id)
 
     return (
-        <Card className='h-100'>
+        <Card className='h-100'> 
             <Card.Img
                 variant='top'
                 src={img}
@@ -40,7 +40,7 @@ export function StoreItem({ id, name, price, img }: StoreItemProps) {
                 <div className='mt-auto'>
                     {quantity === 0 ? (
                         <Button className='w-100' onClick={() => increaseCartQuantity(id)} variant='success' >
-                            Купить</Button>
+                          Добавить в корзину</Button>
                     ) :
                         <div
                             className='d-flex align-items-center
@@ -51,7 +51,7 @@ export function StoreItem({ id, name, price, img }: StoreItemProps) {
             justify-content-center'
                                 style={{ gap: '5.rem' }}
                             >
-                                <Button onClick={() => decreaseCartQuantity(id)}variant='secondary' >-</Button>
+                                <Button onClick={() => decreaseCartQuantity(id)} variant='secondary' >-</Button>
                                 <div>
                                     <span className='fs-3'>{quantity}</span>в корзину
                                 </div>

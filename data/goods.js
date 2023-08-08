@@ -6,7 +6,7 @@ export const goods = [
         category: 'cake',
         name: 'Berry',
         img: "/img/berry.jpg",
-        price: 7500,
+        price: 5000,
     },
     {
         id: 2,
@@ -48,14 +48,14 @@ export const goods = [
         category: 'cake',
         name: 'Nominal',
         img: "/img/nominal.jpg",
-        price: 6500,
+        price: 5500,
     },
     {
         id: 8,
         category: 'cake',
         name: 'Strawberry',
         img: "/img/strawberry.jpg",
-        price: 7500,
+        price: 4500,
     },
     {
         id: 9,

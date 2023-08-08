@@ -1,13 +1,12 @@
 import { SessionProvider } from 'next-auth/react';
-//import { useRouter } from 'next/router';
-
 import Footer from '../components/Footer';
 import Navbar from '../components/Navbar';
-import { Container } from "@mui/material";
+import { Container } from "react-bootstrap";
 import { createTheme, ThemeProvider } from '@mui/material/styles';
 import '../styles/global.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import { ShoppingCartProvider } from '@/context/ShoppingCartContext';
+
 
 const theme = createTheme({
     palette: {
@@ -31,12 +30,12 @@ function MyApp({ Component,
 }) {
 
     return <>
-        <ShoppingCartProvider>
+       <ShoppingCartProvider>
             <SessionProvider session={session}>
                 <ThemeProvider theme={theme}>
                   <Navbar />
-                    <Component {...pageProps} />
-                   <Container fixed>
+                 <Component {...pageProps} />
+                    <Container>
                     <Footer />
                     </Container>
                 </ThemeProvider>

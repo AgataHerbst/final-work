@@ -1,44 +1,34 @@
-import Heading from "../components/Heading";
-import s from '../styles/Post.module.css';
-import { Container } from '@mui/material';
+import { Box, Stack, Skeleton } from "@mui/material";
+import { useState } from "react";
+import Post from "../components/Post";
+//import Search from './Search';
 
+const Comments = () => {
+  const [loading, setLoading] = useState(true);
+  /*const [search, setSearch] = useState('');*/
 
-function Posts({posts}) {
-//console.log(posts)
-return (
-    <>
-    <div className={s.postHead}>
-      <Heading text="Отзывы клиентов" />
-      </div>
-      <Container
-            sx={{
-            mt: '1rem'
-            }}>
-        <h1>Ваши комментраии:</h1>
-        <ul className='posts'>
-          {!!posts.length && posts.slice(0, 20).map(res => { //отображаем 20 комментариев на странице
-            return (
-              <li key={res.id} className='post'>
-                {res.id}{' '}
-                {`${res.body.slice(0, 90)}...`}
-             </li>
-            )
-          })}
-        </ul>
-        </Container>
-    </>
-  )
-}
+  setTimeout(() => {
+    setLoading(false);
+  }, [1000]);
 
-export async function getServerSideProps(){
-  const response = await fetch('https://jsonplaceholder.typicode.com/comments')
-  const data = await response.json();
+  return (
+    <Box flex={4} p={{ xs: 0, md: 2 }}>
+      {loading ? (
+        <Stack spacing={1}>
+          <Skeleton variant="text" height={100} />
+          <Skeleton variant="text" height={20} />
+          <Skeleton variant="text" height={20} />
+          <Skeleton variant="rectangular" height={300} />
+        </Stack>
+      ) : (
+        <>
+          <Post />
+          <Post />
+          <Post />
+          </>
+      )}
+    </Box>
+  );
+};
 
-  return {
-    props: {
-    posts: data.slice(0.20)
-    }
-  }
-}
-
-export default Posts;
+export default Comments;
