@@ -33,7 +33,7 @@ function MyApp({ Component,
        <ShoppingCartProvider>
             <SessionProvider session={session}>
                 <ThemeProvider theme={theme}>
-                  <Navbar />
+                 <Navbar />
                  <Component {...pageProps} />
                     <Container>
                     <Footer />

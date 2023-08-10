@@ -1,15 +1,11 @@
-
+import s from '../styles/Test.module.css';
 
 function test() {
   return (
-    <div>
+    <div className={s.div}>
       
     </div>
   )
 }
 
 export default test
-
-
-
-

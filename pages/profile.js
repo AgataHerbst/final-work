@@ -1,5 +1,5 @@
 import { useSession, signIn, signOut } from 'next-auth/react';
-import { authOptions } from 'pages/api/auth/[...nextauth]'
+import { authOptions } from './api/auth/[...nextauth]'
 import { getServerSession } from "next-auth/next";
 import { IconButton } from '@mui/material';
 

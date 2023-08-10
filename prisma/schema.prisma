@@ -11,22 +11,33 @@ datasource db {
   shadowDatabaseUrl = env("POSTGRES_URL_NON_POOLING") // used for migrations
 }
 
-model Account {
-  id                       String  @id @default(cuid())
-  userId                   String
-  type                     String
-  provider                 String
-  providerAccountId        String
-  refresh_token            String? @db.Text
-  access_token             String? @db.Text
-  expires_at               Int?
-  token_type               String?
-  scope                    String?
-  id_token                 String? @db.Text
-  session_state            String?
-  refresh_token_expires_in Int?
+model Post {
+  id        Int      @id @default(autoincrement())
+  createdAt DateTime @default(now())
+  title     String
+  content   String?
+  published Boolean  @default(false)
+  author    User?    @relation(fields: [authorId], references: [id])
+  authorId  String?
+}
 
-   user                     User    @relation(fields: [userId], references: [id], onDelete: Cascade)
+model Account {
+  id                 String  @id @default(cuid())
+  userId             String
+  type               String
+  provider           String
+  providerAccountId  String
+  refresh_token      String? @db.Text
+  access_token       String? @db.Text
+  expires_at         Int?
+  token_type         String?
+  scope              String?
+  id_token           String? @db.Text
+  session_state      String?
+  oauth_token_secret String?
+  oauth_token        String?
+
+  user User @relation(fields: [userId], references: [id])
 
   @@unique([provider, providerAccountId])
 }
@@ -36,7 +47,7 @@ model Session {
   sessionToken String   @unique
   userId       String
   expires      DateTime
-  user         User     @relation(fields: [userId], references: [id], onDelete: Cascade)
+  user         User     @relation(fields: [userId], references: [id])
 }
 
 model User {
@@ -48,7 +59,6 @@ model User {
   accounts      Account[]
   sessions      Session[]
   posts         Post[]
-  basketGoods   BasketGoods[]
 }
 
 model VerificationToken {
@@ -57,36 +67,4 @@ model VerificationToken {
   expires    DateTime
 
   @@unique([identifier, token])
-}
-model Post {
-  id        Int     @id @default(autoincrement()) //номер поста
-  content   String? //содержание
-  createAt  DateTime @default(now()) //время создания
-  updateAt  DateTime @updatedAt
-  userId    String 
-  user      User     @relation(fields: [userId], references: [id])
- 
-}
-model BasketGoods { //корзина товаров
-  id        Int      @id @unique //номер заказа
-  userId    String
-  user      User      @relation(fields: [userId], references: [id])
-  total     Float //всего
-  createdAt DateTime @default(now()) //время и дата заказа
-  updatedAt DateTime @updatedAt
-  Goods     Goods[] //масив товаров
-}
-
-model Goods {//товары
-  id            Int          @id @default(autoincrement())
-  name          String //название товара
-  createdAt     DateTime     @default(now()) 
-  updatedAt     DateTime     @updatedAt
-  BasketGoods   BasketGoods? @relation(fields: [basketGoodsId], references: [id])
-  basketGoodsId Int?
-}
-enum BasketState {
-  ACTIVE
-  EXPIRED
-  COMPLETED
 }
