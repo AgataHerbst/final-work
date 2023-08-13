@@ -29,10 +29,13 @@ function About() {
  
   return <>
     <main className={s.main}>
-      <Container fixed>
-        <Heading text="Обо мне:" />
-      
-          <ImageList sx={{ width: 600, height: 600 }} cols={3} rowHeight={164}>
+    <Container  fixed>
+     <Heading text="Обо мне:" />
+    <ImageList sx={{ width: 1200, height: 600 }}
+            variant="woven"
+            cols={6}
+            rowHeight={200}
+          >
             {data.map((item) => (
               <ImageListItem key={item.img}>
 

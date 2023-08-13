@@ -23,7 +23,7 @@ function Home() {
     <Heading />
    <Container>
       <Link href='galleries'><Button variant="contained">Все торты</Button></Link>
-      <Image src="/backer/chef2.jpg" width={250} height={250} alt="chef" />
+      <Image src="/backer/chef2.jpg" width={200} height={200} alt="chef" />
       <Typography
         variant="h3"
         component="span"

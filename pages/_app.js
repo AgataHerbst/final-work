@@ -25,6 +25,7 @@ const theme = createTheme({
     },
 });
 
+
 function MyApp({ Component,
     pageProps: { session, ...pageProps }
 }) {
