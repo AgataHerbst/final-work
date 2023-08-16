@@ -1,6 +1,6 @@
 import s from '../styles/Contact.module.css';
 import Image from 'next/image';
-import { Container, FormLabel, Button, TextField, FormControl } from '@mui/material';
+import { Container, FormLabel, Button, TextField, FormControl, Typography } from '@mui/material';
 import { useState } from 'react';
 import { sendContactForm } from '../lib/api';
 
@@ -48,7 +48,7 @@ setState ((prev) => ({
 <Container fixed>
    <h1>Контакты:</h1>
 {error && (
-  <TextField>{error}</TextField>
+  <Typography>{error}</Typography>
 )}
 
    <div className={s.contact}>
