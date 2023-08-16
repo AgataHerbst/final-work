@@ -3,8 +3,9 @@ import Footer from '../components/Footer';
 import Navbar from '../components/Navbar';
 import { Container } from "react-bootstrap";
 import { createTheme, ThemeProvider } from '@mui/material/styles';
-import '../styles/global.css';
+import '@/styles/global.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
+//import AppContainer from "../components/AppContainer";
 import { ShoppingCartProvider } from '@/context/ShoppingCartContext';
 
 
@@ -31,13 +32,15 @@ function MyApp({ Component,
 }) {
 
     return <>
-       <ShoppingCartProvider>
+        <ShoppingCartProvider>
             <SessionProvider session={session}>
                 <ThemeProvider theme={theme}>
-                 <Navbar />
-                 <Component {...pageProps} />
+                    <Navbar />
+                
+                    <Component {...pageProps} />
+                 
                     <Container>
-                    <Footer />
+                        <Footer />
                     </Container>
                 </ThemeProvider>
             </SessionProvider>

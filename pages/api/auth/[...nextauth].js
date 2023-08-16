@@ -17,7 +17,7 @@ export const authOptions = {
   GitHubProvider({
     clientId: process.env.GITHUB_ID,
     clientSecret: process.env.GITHUB_SECRET,
-  }) 
+  }),
 ],
 callbacks: {
   async signIn({ user, account, profile, email, credentials }) {
@@ -42,7 +42,6 @@ callbacks: {
 };
 
 const resf = NextAuth(authOptions);
-
 export default (...params) => {
 const [req] = params;
  console.log('pages/api/auth/[...nextauth].js ');

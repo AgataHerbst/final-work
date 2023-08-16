@@ -3,6 +3,7 @@ import { Button, Card } from 'react-bootstrap';
 import { useShoppingCart } from "../context/ShoppingCartContext";
 
 
+
 type StoreItemProps = {
     id: number
     name: string
@@ -20,7 +21,7 @@ export function StoreItem({ id, name, price, img }: StoreItemProps) {
     const quantity = getItemQuantity(id)
 
     return (
-        <Card className='h-100'> 
+        <Card className='h-100'>
             <Card.Img
                 variant='top'
                 src={img}
@@ -32,26 +33,27 @@ export function StoreItem({ id, name, price, img }: StoreItemProps) {
                 <Card.Title className="d-flex
     justify-content-between align-items-baseline
     mb-4">
-                    <span className='fs-2'>{name}</span>
+                    <span className='fs-2 text-dark'>{name}</span>
                     <span className='ms-2 text-muted'>{formatCurrency(price)
                     }</span>
 
                 </Card.Title>
                 <div className='mt-auto'>
                     {quantity === 0 ? (
-                        <Button className='w-100' onClick={() => increaseCartQuantity(id)} variant='success'>
-                          Добавить в корзину</Button>
+                        <Button className='w-100 bg-success text-white border-0' onClick={() => increaseCartQuantity(id)} >
+                            Добавить в корзину</Button>
                     ) :
                         <div
                             className='d-flex align-items-center
-         flex-column'
+ flex-column'
                             style={{ gap: '.5rem' }}>
+
                             <div
                                 className='d-flex aline-items-center
             justify-content-center'
                                 style={{ gap: '5.rem' }}
                             >
-                                <Button onClick={() => decreaseCartQuantity(id)} variant='secondary' >-</Button>
+                                <Button onClick={() => decreaseCartQuantity(id)} variant='secondary'>-</Button>
                                 <div>
                                     <span className='fs-3'>{quantity}</span>в корзину
                                 </div>

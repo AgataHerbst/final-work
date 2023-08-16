@@ -1,4 +1,4 @@
-import Heading from "../components/Heading";
+//import Heading from "../components/Heading";
 import { Typography, Container } from "@mui/material";
 import s from '../styles/About.module.css';
 import ImageList from '@mui/material/ImageList';
@@ -30,7 +30,7 @@ function About() {
   return <>
     <main className={s.main}>
     <Container  fixed>
-     <Heading text="Обо мне:" />
+     <h1 className={s.head}>Обо мне:</h1>
     <ImageList sx={{ width: 1200, height: 600 }}
             variant="woven"
             cols={6}

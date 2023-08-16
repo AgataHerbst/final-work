@@ -1,42 +1,121 @@
-import Heading from '../components/Heading';
 import s from '../styles/Contact.module.css';
 import Image from 'next/image';
-import { Container, Grid } from '@mui/material';
-//import { Prisma } from '@prisma/client';
-import { useRouter } from 'next/router';
+import { Container, FormLabel, Button, TextField, FormControl } from '@mui/material';
+import { useState } from 'react';
+import { sendContactForm } from '../lib/api';
 
-
-function Contact() {
-  const router = useRouter()
-  return <>
-    <Container fixed>
-   <Heading text="Контакты:" />
-
-    <div className={s.contact}>
-      <Grid item xs={12} md={4}>
-      <Image src="/contact/color.jpg" width={300} height={700} alt="chef" /></Grid>
-     
-        
-        <div className={s.rightSide}>
-          <form className={s.form}>
-            <label className={s.label} htmlFor="name"> Полное имя </label>
-            <input className={s.input} name="name" placeholder="Введите полное имя..." type="text" />
-            <label className={s.label} htmlFor="email"> Email </label>
-            <input className={s.input} name="email" placeholder="Введите email..." type="email" />
-            <label className={s.label} htmlFor="message"> Сообщение </label>
-            <textarea className={s.textarea}
-              rows="6"
-              placeholder="Введите ваш вопрос..."
-              name="message"
-              required
-            >
-            </textarea>
-            <button className={s.button} type="submit"> Отправить сообщение </button>
-          </form>
-        </div>
-        </div>
-    </Container>
-  </>
+const initValues = {
+   name: "",
+   email: "",
+   subject: "",
+   message: ""
 }
 
-export default Contact
+const initState = { values: initValues };
+
+function Contact() {
+const [state, setState] = useState(initState);
+
+const { values, error } = state;
+
+const onTextChange = ({target}) =>
+setState((prev) => ({
+  ...prev,
+  values: {
+    ...prev.values,
+    [target.name]: target.value,
+  },
+}));
+
+const onSubmit = async () => {
+  setState((prev) => ({
+    ...prev
+  }));
+
+  try {
+    await sendContactForm(values)
+  } catch (error) {
+setState ((prev) => ({
+  ...prev,
+  error: error.message, 
+}))
+  }
+
+  
+  };
+
+  return (
+<Container fixed>
+   <h1>Контакты:</h1>
+{error && (
+  <TextField>{error}</TextField>
+)}
+
+   <div className={s.contact}>
+      <Image src="/contact/color.jpg" 
+      width={300} 
+      height={700} 
+      alt="chef" />
+
+<div className={s.rightSide}>
+          <form className={s.form}>
+          <FormControl>
+           <FormLabel>Полное имя</FormLabel>
+            <input className={s.input}
+             type="text" 
+             name="name" 
+             value={values.name} 
+             onChange={onTextChange}
+      
+            />
+          </FormControl>
+
+          <FormControl>
+           <FormLabel>Email</FormLabel> 
+            <input className={s.input}
+             type="email"
+             name="email" 
+             value={values.email}
+             onChange={onTextChange}
+           
+              />
+             </FormControl>
+
+             <FormControl>
+              <FormLabel>Subject</FormLabel> 
+            <input className={s.input}
+             type="text"
+             name="subject" 
+             value={values.subject}
+             onChange={onTextChange}
+             />
+            </FormControl>
+
+            <FormControl>
+          <FormLabel>Сообщение</FormLabel>
+            <TextField
+              name="message"
+              value={values.message}
+              onChange={onTextChange}
+         
+            >
+            </TextField >
+            </FormControl>
+
+            <Button 
+             variant="outline"
+             onClick={onSubmit}
+             >
+               Отправить сообщение</Button>
+          </form>
+          </div>
+          </div>
+       </Container>
+      
+  )
+}
+
+export default Contact;
+       
+        
+       
