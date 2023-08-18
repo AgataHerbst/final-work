@@ -1,8 +1,9 @@
 import { Container } from "@mui/material";
 import s from '../styles/About.module.css';
 import ImageList from "@mui/material/Box";
-import ImageListItem, {imageListItemClasses} from "@mui/material/ImageListItem";
+import ImageListItem, { imageListItemClasses } from "@mui/material/ImageListItem";
 import { createTheme, ThemeProvider } from "@mui/material/styles";
+
 
 const data = [
   {
@@ -29,8 +30,8 @@ const theme = createTheme({
   breakpoints: {
     values: {
       mobile: 0,
-      bigMobile: 350,
-      tablet: 650,
+      bigMobile: 400,
+      tablet: 700,
       desktop: 900
     }
   }
