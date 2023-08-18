@@ -18,14 +18,6 @@
   justify-content: center;
 }
 
-.form {
-  display: flex;
-  flex-direction: column;
-  width: auto;
-  height: auto;
-  padding: 30px;
-}
-
 .input {
   height: 60px;
   width: 100%;
@@ -55,7 +47,43 @@
   outline: none;
 }
 
-.button{
- border-color: grey;
+.contact {
+  width: 100%;
+  height: 90vh;
+  display: flex;
 }
+
+.contact .leftSide {
+  height: 100%;
+  flex: 50%;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.contact .rightSide {
+  height: 100%;
+  flex: 50%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.contact .rightSide h1 {
+  font-family: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande",
+    "Lucida Sans", Arial, sans-serif;
+  font-weight: 10;
+  font-size: 50px;
+  margin-left: 30px;
+}
+
+.form {
+  display: flex;
+  flex-direction: column;
+  width: auto;
+  height: auto;
+  padding: 30px;
+}
+
+
 

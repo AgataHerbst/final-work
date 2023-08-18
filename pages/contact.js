@@ -1,8 +1,10 @@
 import s from '../styles/Contact.module.css';
 import Image from 'next/image';
+import largePic from '../public/contact/color.jpg';
 import { Container, FormLabel, Button, TextField, FormControl, Typography } from '@mui/material';
 import { useState } from 'react';
 import { sendContactForm } from '../lib/api';
+
 
 const initValues = {
    name: "",
@@ -12,13 +14,12 @@ const initValues = {
 }
 
 const initState = { values: initValues };
-
 function Contact() {
 const [state, setState] = useState(initState);
 
 const { values, error } = state;
 
-const onTextChange = ({target}) =>
+const handleChange = ({target}) =>
 setState((prev) => ({
   ...prev,
   values: {
@@ -40,8 +41,6 @@ setState ((prev) => ({
   error: error.message, 
 }))
   }
-
-  
   };
 
   return (
@@ -52,10 +51,12 @@ setState ((prev) => ({
 )}
 
    <div className={s.contact}>
-      <Image src="/contact/color.jpg" 
-      width={300} 
-      height={700} 
-      alt="chef" />
+   <Image
+      src={largePic}
+      alt='chef'
+      placeholder="blur"
+     style={{objectFit: 'cover'}}
+      />
 
 <div className={s.rightSide}>
           <form className={s.form}>
@@ -65,7 +66,7 @@ setState ((prev) => ({
              type="text" 
              name="name" 
              value={values.name} 
-             onChange={onTextChange}
+             onChange={handleChange}
       
             />
           </FormControl>
@@ -76,18 +77,18 @@ setState ((prev) => ({
              type="email"
              name="email" 
              value={values.email}
-             onChange={onTextChange}
+             onChange={handleChange}
            
               />
              </FormControl>
 
              <FormControl>
-              <FormLabel>Subject</FormLabel> 
+              <FormLabel>Тема</FormLabel> 
             <input className={s.input}
              type="text"
              name="subject" 
              value={values.subject}
-             onChange={onTextChange}
+             onChange={handleChange}
              />
             </FormControl>
 
@@ -96,15 +97,17 @@ setState ((prev) => ({
             <TextField
               name="message"
               value={values.message}
-              onChange={onTextChange}
+              onChange={handleChange}
          
             >
             </TextField >
             </FormControl>
 
             <Button 
-             variant="outline"
+             variant="outline" 
              onClick={onSubmit}
+             color="primary"
+             disabled={!values.name || !values.email || !values.subject || !values.message}
              >
                Отправить сообщение</Button>
           </form>

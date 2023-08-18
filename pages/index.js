@@ -34,7 +34,7 @@ function Home() {
         }}
        >ТОРТЫ НА ЛЮБОЙ ВКУС
       </Typography>
-      <ImageList sx={{ width: 1100, height: 600 }} ariant="woven" cols={3} gap={9}>
+      <ImageList sx={{ width: 1100, height: 600 }} variant="woven" cols={3} gap={9}>
         {data.map((item) => (
           <ImageListItem key={item.img}>
 

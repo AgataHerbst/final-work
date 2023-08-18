@@ -36,10 +36,8 @@ function MyApp({ Component,
             <SessionProvider session={session}>
                 <ThemeProvider theme={theme}>
                     <Navbar />
-                
-                    <Component {...pageProps} />
-                 
-                    <Container>
+                <Component {...pageProps} />
+                 <Container>
                         <Footer />
                     </Container>
                 </ThemeProvider>
