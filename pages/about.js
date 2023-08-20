@@ -51,7 +51,7 @@ export default function About() {
               display: "grid",
               gridTemplateColumns: {
                 mobile: "repeat(2, 1fr)",
-                bigMobile: "repeat(3, 1fr)",
+                bigMobile: "repeat(6, 1fr)",
                 tablet: "repeat(4, 1fr)",
                 desktop: "repeat(6, 1fr)"
               },

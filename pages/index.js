@@ -51,11 +51,11 @@ export default function Home() {
       <ThemeProvider theme={theme}>
       <Box
              sx={{
-              height: 600,
+              height: 500,
               display: "grid",
               gridTemplateColumns: {
               mobile: "repeat(1, 1fr)",
-              bigMobile: "repeat(2, 1fr)",
+              bigMobile: "repeat(3, 1fr)",
               tablet: "repeat(3, 1fr)",
               desktop: "repeat(3, 1fr)"
               },

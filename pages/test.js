@@ -1,10 +1,11 @@
+import React from 'react'
 
-
-
-function Test() {
-  return <>
-    
-
-  </>
+function test() {
+  return (
+    <div>
+      
+    </div>
+  )
 }
-export default Test;
+
+export default test
