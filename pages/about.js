@@ -1,6 +1,6 @@
 import { Container } from "@mui/material";
 import s from '../styles/About.module.css';
-import ImageList from "@mui/material/Box";
+import Box from '@mui/material/Box';
 import ImageListItem, { imageListItemClasses } from "@mui/material/ImageListItem";
 import { createTheme, ThemeProvider } from "@mui/material/styles";
 
@@ -45,14 +45,14 @@ export default function About() {
       <Container>
         <h1 className={s.head}>Обо мне:</h1>
         <ThemeProvider theme={theme}>
-          <ImageList
+          <Box
             sx={{
-              height: 500,
+              height: 600,
               display: "grid",
               gridTemplateColumns: {
-                mobile: "repeat(1, 1fr)",
-                bigMobile: "repeat(2, 1fr)",
-                tablet: "repeat(3, 1fr)",
+                mobile: "repeat(2, 1fr)",
+                bigMobile: "repeat(3, 1fr)",
+                tablet: "repeat(4, 1fr)",
                 desktop: "repeat(6, 1fr)"
               },
               [`& .${imageListItemClasses.root}`]: {
@@ -72,14 +72,15 @@ export default function About() {
                 />
               </ImageListItem>
             ))}
-
-          </ImageList>
+          </Box>
         </ThemeProvider>
         <div className={s.text}>
           <p>Я вас приветствую, мои Дорогие Гости!<br />
             Меня зовут Иришка и я очень люблю печь и изготавливать всевозможные торты. Для своих тортов я использую только натуральные продукты, чтобы вкус моей выпечки навсегда остался в вашей вкусовой памяти. Каждый день я нахожу новые идеи для своих шедевров и воплощаю их в жизнь, чтобы радовать тех, кто ОБОЖАЕТ вкусные сладости!!!
           </p>
         </div>
+
+
       </Container>
     </main>
   );

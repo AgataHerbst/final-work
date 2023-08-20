@@ -2,7 +2,7 @@ import Link from 'next/link';
 import Heading from "../components/Heading";
 import Image from 'next/image';
 import { Typography, Button, Container } from "@mui/material";
-import ImageList from "@mui/material/Box";
+import Box from '@mui/material/Box';
 import ImageListItem, {imageListItemClasses} from "@mui/material/ImageListItem";
 import { createTheme, ThemeProvider } from "@mui/material/styles";
 
@@ -49,9 +49,9 @@ export default function Home() {
        >ТОРТЫ НА ЛЮБОЙ ВКУС
       </Typography>
       <ThemeProvider theme={theme}>
-      <ImageList
+      <Box
              sx={{
-              height: 500,
+              height: 600,
               display: "grid",
               gridTemplateColumns: {
               mobile: "repeat(1, 1fr)",
@@ -76,7 +76,7 @@ export default function Home() {
         </ImageListItem>
           
         ))}
-      </ImageList>
+      </Box>
       </ThemeProvider>
      </Container>
       </main>

@@ -33,16 +33,19 @@ const onSubmit = async () => {
     ...prev
   }));
 
-  try {
-    await sendContactForm(values)
-  } catch (error) {
+try {
+    await sendContactForm(values);
+    setState(initState)
+    } catch (error) {
+      console.log(error)
 setState ((prev) => ({
   ...prev,
   error: error.message, 
 }))
-  }
-  };
+}
 
+};
+ 
   return (
 <Container fixed>
    <h1>Контакты:</h1>
