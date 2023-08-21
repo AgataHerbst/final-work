@@ -4,8 +4,10 @@ import s from '../styles/Navbar.module.css';
 import Image from 'next/image';
 import Login from '../components/Login';
 import Link from "next/link";
-import { AppBar, Button, Toolbar, Typography } from "@mui/material";
-import { useShoppingCart } from "../context/ShoppingCartContext"
+import { AppBar, Button, Toolbar, Typography, Avatar } from "@mui/material";
+import { useShoppingCart } from "../context/ShoppingCartContext";
+
+
 
 const pages = [
     { name: 'Домой', src: '/' },
@@ -19,7 +21,8 @@ const pages = [
 function Navbar() {
     const { openCart, cartQuantity } = useShoppingCart()
     const { pathname } = useRouter(); //путь текущей страницы
-
+   
+    
     return (
         <AppBar position="static">
             <Toolbar>
@@ -40,7 +43,7 @@ function Navbar() {
                             <Link href={src} className="link">{name}</Link>
                         </div>
                     )}
-                    <div><Login /></div>
+                     <div><Login /></div>
                 </div>
                 <Button
                     color="inherit"

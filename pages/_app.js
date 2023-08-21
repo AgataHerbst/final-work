@@ -5,7 +5,6 @@ import { Container } from "react-bootstrap";
 import { createTheme, ThemeProvider } from '@mui/material/styles';
 import '@/styles/global.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
-//import AppContainer from "../components/AppContainer";
 import { ShoppingCartProvider } from '@/context/ShoppingCartContext';
 
 

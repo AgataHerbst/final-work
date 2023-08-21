@@ -1,7 +1,7 @@
 import { useSession, signIn, signOut } from 'next-auth/react'; //хук useSession и функции входа и выхода
 import { authOptions } from './api/auth/[...nextauth]'
 import { getServerSession } from "next-auth/next";
-import { IconButton } from '@mui/material';
+//import { IconButton } from '@mui/material';
 
 
 export default function Component (){
@@ -13,7 +13,7 @@ if (session) {
         Вы вошли, как: {session.user?.email} <br /> 
         {session?.user?.image && <img src={session.user.image} alt='avatar' />}
          {session?.user?.name} <br />
-        <IconButton onClick={() =>signOut()}>Выйти</IconButton>
+        <button onClick={() =>signOut()}>Выйти</button>
         </>
     )
 }
