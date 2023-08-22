@@ -10,9 +10,9 @@ export default function Component (){
 if (session) {
     return (
         <>
-        Вы вошли, как: {session.user?.email} <br /> 
+        Вы вошли, как: {session.user.email} <br /> 
         {session?.user?.image && <img src={session.user.image} alt='avatar' />}
-         {session?.user?.name} <br />
+        {session?.user?.name} <br />
         <button onClick={() =>signOut()}>Выйти</button>
         </>
     )

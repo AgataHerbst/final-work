@@ -1,14 +1,14 @@
 import NextAuth from "next-auth";
 import GitHubProvider from "next-auth/providers/github";
 import GoogleProvider from "next-auth/providers/google";
-//import { PrismaAdapter } from "@auth/prisma-adapter";
-//import { PrismaClient } from "@prisma/client";
+import { PrismaAdapter } from "@auth/prisma-adapter";
+import { PrismaClient } from "@prisma/client";
 
 
-//const prisma = new PrismaClient();
+const prisma = new PrismaClient();
 
 export const authOptions = {
- // adapter: PrismaAdapter(prisma),
+  adapter: PrismaAdapter(prisma),
   providers: [
     GoogleProvider({
       clientId: process.env.GOOGLE_ID,
@@ -19,7 +19,7 @@ export const authOptions = {
     clientSecret: process.env.GITHUB_SECRET,
   }),
 ],
-/*callbacks: {
+callbacks: {
   async signIn({ user, account, profile, email, credentials }) {
      console.debug('>> callback signIn', { user, account, profile, email, credentials });
     return true;
@@ -38,15 +38,13 @@ export const authOptions = {
      console.debug('>> callback jwt', { token, user, account, profile, isNewUser });
     return token;
   }
-}*/
+}
 }
 
-export default NextAuth(authOptions);
-
-/*const resf = NextAuth(authOptions);
+const resf = NextAuth(authOptions);
 export default (...params) => {
 const [req] = params;
  console.log('pages/api/auth/[...nextauth].js ');
  console.log('>> ', req.method, ' запрос на', req.url, req.query);
 return resf(...params);
-};*/
+};

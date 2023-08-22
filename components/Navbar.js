@@ -4,7 +4,7 @@ import s from '../styles/Navbar.module.css';
 import Image from 'next/image';
 import Login from '../components/Login';
 import Link from "next/link";
-import { AppBar, Button, Toolbar, Typography, Avatar } from "@mui/material";
+import { AppBar, Button, Toolbar, Typography} from "@mui/material";
 import { useShoppingCart } from "../context/ShoppingCartContext";
 
 
