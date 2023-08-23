@@ -1,20 +1,15 @@
 .navbar {
-    display: flex;
-    align-items: center;
-    flex-wrap: wrap;
-    margin-bottom: 0px;
-    padding-right: 30px;
-   
-
-   }
-
- .navbar div {
-  padding: 7px;
-  font-weight: bold;
-  font-size: 20px;
-  
- }
-
-.navbar div link{
-  color: black;
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  margin-bottom: 0px;
+ 
 }
+
+.navbar div {
+padding: 5px;
+font-weight: bold;
+font-size: 20px;
+
+}
+

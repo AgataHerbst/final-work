@@ -9,7 +9,7 @@ export default function Login() {
 
     if (session)
         return <div>
-            {session?.user?.image && <img src={session?.user?.image || ''} width="32" height="32" alt='avatar' />}
+           {session?.user?.image && <img src={session?.user?.image || ''} width="32" height="32" alt='avatar' />}
             <span>
                 <Link href='/profile'
                     className=''

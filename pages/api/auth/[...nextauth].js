@@ -31,7 +31,7 @@ callbacks: {
   async session({ session, user, token }) {
      console.debug('>> callback session', { session, user, token });
     session.user.id = user.id;
-    session.user.role = user.role;
+    //session.user.role = user.role;
     return session;
   },
   async jwt({ token, user, account, profile, isNewUser }) {
