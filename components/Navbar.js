@@ -11,16 +11,7 @@ import { useShoppingCart } from "../context/ShoppingCartContext";
 
 
 
-const pages = [
-    { name: 'Домой', src: '/' },
-    { name: 'Обо мне', src: '/about' },
-    { name: 'Галлерея', src: '/galleries' },
-    { name: 'Отзывы', src: '/posts' },
-    { name: 'Контакты', src: '/contact' },
-    { name: 'Тест', src: '/test' },
-];
-
-export default function Navbar() {
+export default function Navbar({links}) {
     const { openCart, cartQuantity } = useShoppingCart()
     const { pathname } = useRouter(); //путь текущей страницы
    const theme = useTheme();
@@ -40,7 +31,7 @@ export default function Navbar() {
                     <ShoppingCart />
                     {cartQuantity}
                 </Button>
-           <DrawerComp />
+           <DrawerComp links={links} />
            </> 
            ) : (
 
@@ -60,7 +51,7 @@ export default function Navbar() {
              <Grid item xs={5}>
                 <Tabs>
               <div className={s.navbar}>
-                   {pages.map(({ name, src }) =>
+                   {links.map(({ name, src }) =>
                         <div key={name} 
                             className={pathname === src
                                 ? 'active'

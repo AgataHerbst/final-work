@@ -26,6 +26,15 @@ const theme = createTheme({
 });
 
 
+const linksArray = [
+    { name: 'Домой', src: '/' },
+    { name: 'Обо мне', src: '/about' },
+    { name: 'Галлерея', src: '/galleries' },
+    { name: 'Отзывы', src: '/posts' },
+    { name: 'Контакты', src: '/contact' },
+    { name: 'Тест', src: '/test' },
+]
+
 function MyApp({ Component,
     pageProps: { session, ...pageProps }
 }) {
@@ -34,7 +43,7 @@ function MyApp({ Component,
         <ShoppingCartProvider>
             <SessionProvider session={session}>
                 <ThemeProvider theme={theme}>
-                    <Navbar />
+                    <Navbar links={linksArray} />
                 <Component {...pageProps} />
                  <Container>
                         <Footer />

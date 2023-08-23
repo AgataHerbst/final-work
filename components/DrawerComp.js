@@ -2,22 +2,29 @@ import { Drawer, IconButton, List, ListItemButton, ListItemIcon, ListItemText } 
 import MenuRoundedIcon from '@mui/icons-material/MenuRounded';
 import { useState } from 'react';
 
-function DrawerComp () {
+function DrawerComp ({links}) {
 const [open, setOpen] = useState(false);
   return (
     <>
-    <Drawer open={open} onClose={() => setOpen(false)}>
-      <List>
-        <ListItemButton>
+    <Drawer 
+    PaperProps={{
+      sx: {backgroundColor: '#8FBC8F'}
+    }}
+    open={open} 
+    onClose={() => setOpen(false)}>
+     <List>
+      {links.map(({name, src}) => (
+        <ListItemButton onClick={() =>setOpen(false)} key={src} divider>
           <ListItemIcon>
-            <ListItemText>
-             Products
+            <ListItemText sx={{color: 'white'}}>
+              {name}
             </ListItemText>
           </ListItemIcon>
         </ListItemButton>
-      </List>
+      ))}
+     </List>
     </Drawer>
-    <IconButton sx={{marginLeft: "auto", color: "white"}} onClick={() =>(!open)}>
+    <IconButton sx={{marginLeft: "auto", color: "white"}} onClick={() => setOpen(!open)}>
 <MenuRoundedIcon />
     </IconButton>
     </>
