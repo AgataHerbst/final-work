@@ -1,9 +1,12 @@
 import { Drawer, IconButton, List, ListItemButton, ListItemIcon, ListItemText } from '@mui/material';
 import MenuRoundedIcon from '@mui/icons-material/MenuRounded';
 import { useState } from 'react';
+import Link from "next/link";
+import { useRouter } from 'next/router';
 
 function DrawerComp ({links}) {
 const [open, setOpen] = useState(false);
+const { pathname } = useRouter();
   return (
     <>
     <Drawer 
@@ -16,9 +19,13 @@ const [open, setOpen] = useState(false);
       {links.map(({name, src}) => (
         <ListItemButton onClick={() =>setOpen(false)} key={src} divider>
           <ListItemIcon>
-            <ListItemText sx={{color: 'white'}}>
-              {name}
-            </ListItemText>
+          <ListItemText 
+              key={name} className={pathname === src
+                                ? 'active'
+                                : ''}
+                                   >
+            <Link href={src} className="link">{name}</Link>
+           </ListItemText>
           </ListItemIcon>
         </ListItemButton>
       ))}
