@@ -47,8 +47,11 @@ setState ((prev) => ({
 };
  
   return (
-<Container fixed>
-   <h1>Контакты:</h1>
+<Container
+sx={{
+  mt: '2rem'}}
+>
+   <h1 className={s.h1}>Контакты:</h1>
 {error && (
   <Typography>{error}</Typography>
 )}
@@ -56,10 +59,11 @@ setState ((prev) => ({
    <div className={s.contact}>
    <Image
       src={largePic}
+      height={800}
       alt='chef'
       placeholder="blur"
-     style={{objectFit: 'cover'}}
-      />
+      style={{objectFit: 'cover'}}
+   />
 
 <div className={s.rightSide}>
           <form className={s.form}>

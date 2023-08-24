@@ -1,5 +1,4 @@
 import Heading from "../components/Heading";
-//import s from '../styles/Post.module.css';
 import { Container } from "react-bootstrap";
 import { Favorite, FavoriteBorder, MoreVert, Share } from "@mui/icons-material";
 import {

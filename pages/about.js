@@ -47,11 +47,12 @@ export default function About() {
         <ThemeProvider theme={theme}>
           <Box
             sx={{
-              height: 600,
+              mt:'2rem',
+              height: 500,
               display: "grid",
               gridTemplateColumns: {
-                mobile: "repeat(2, 1fr)",
-                bigMobile: "repeat(6, 1fr)",
+               mobile: "repeat(2, 1fr)",
+              bigMobile: "repeat(6, 1fr)",
                 tablet: "repeat(4, 1fr)",
                 desktop: "repeat(6, 1fr)"
               },

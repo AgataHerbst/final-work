@@ -1,8 +1,8 @@
-import { Offcanvas, Stack } from "react-bootstrap"
-import { useShoppingCart } from "../context/ShoppingCartContext"
+import { Offcanvas, Stack } from "react-bootstrap";
+import { useShoppingCart } from "../context/ShoppingCartContext";
 import { formatCurrency } from '@/utilities/FormatCurrency';
-import { CartItem } from "./CartItem"
-import {goods} from "../data/goods.js"
+import { CartItem } from "./CartItem";
+import {goods} from "../data/goods.js";
 
 type ShoppingCartProps = {
   isOpen: boolean
@@ -31,6 +31,6 @@ export function ShoppingCart({ isOpen }: ShoppingCartProps) {
           </div>
         </Stack>
       </Offcanvas.Body>
-    </Offcanvas>
+      </Offcanvas>
   )
 }
