@@ -32,7 +32,7 @@ const linksArray = [
     { name: 'Галлерея', src: '/galleries' },
     { name: 'Отзывы', src: '/posts' },
     { name: 'Контакты', src: '/contact' },
-    { name: 'Тест', src: '/test' },
+    
 ]
 
 function MyApp({ Component,

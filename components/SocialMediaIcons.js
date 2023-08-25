@@ -6,19 +6,19 @@ import WhatsAppIcon from '@mui/icons-material/WhatsApp';
 const SocialMediaIcons = () => {
   return (
     <div>
-     <Link
+      <Link
         href="https://t.me/+HXDREgaKVyk2MzQy"
-        >
-       <TelegramIcon sx={{ fontSize: 40 }}/>
+      >
+        <TelegramIcon sx={{ fontSize: 40 }} />
       </Link>
       <Link
         href="https://chat.whatsapp.com/LwsrjwGOS7aLcqeOEHpJyj"
-       >
+      >
         <WhatsAppIcon sx={{ fontSize: 40 }} />
       </Link>
       <Link
-       href="https://instagram.com/bakery_irsh?igshid=NjIwNzIyMDk2Mg=="
-        >
+        href="https://instagram.com/bakery_irsh?igshid=NjIwNzIyMDk2Mg=="
+      >
         <InstagramIcon sx={{ fontSize: 40 }} />
       </Link>
     </div>

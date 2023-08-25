@@ -1,11 +1,11 @@
 import { Box, Stack, Skeleton } from "@mui/material";
 import { useState } from "react";
 import Post from "../components/Post";
-//import Search from './Search';
+
 
 const Comments = () => {
   const [loading, setLoading] = useState(true);
-  /*const [search, setSearch] = useState('');*/
+
 
   setTimeout(() => {
     setLoading(false);

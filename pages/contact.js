@@ -12,8 +12,8 @@ const initValues = {
    subject: "",
    message: ""
 }
-
 const initState = { values: initValues };
+
 function Contact() {
 const [state, setState] = useState(initState);
 

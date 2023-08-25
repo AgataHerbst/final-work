@@ -30,12 +30,12 @@ export function StoreItem({ id, name, price, img }: StoreItemProps) {
             />
 
             <CardContent>
-            <Typography
+                <Typography
                     variant='h6'
                     component='h3'
-                    >
-                        {name}
-                    </Typography>
+                >
+                    {name}
+                </Typography>
 
                 <Typography variant='body1'>Цена: {formatCurrency(price)
                 }</Typography>
