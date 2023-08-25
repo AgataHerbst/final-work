@@ -43,7 +43,12 @@ export default function About() {
   return (
     <main className={s.main}>
       <Container>
+        <br />
         <h1 className={s.head}>Обо мне:</h1>
+        <Container
+         sx={{
+          mt: '3rem'}}
+        >
         <ThemeProvider theme={theme}>
           <Box
             sx={{
@@ -81,7 +86,7 @@ export default function About() {
           </p>
         </div>
 
-
+        </Container>
       </Container>
     </main>
   );

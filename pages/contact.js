@@ -1,6 +1,6 @@
 import s from '../styles/Contact.module.css';
 import Image from 'next/image';
-import largePic from '../public/contact/color.jpg';
+import largePic from '../public/contact/grey.jpg';
 import { Container, FormLabel, Button, TextField, FormControl, Typography } from '@mui/material';
 import { useState } from 'react';
 import { sendContactForm } from '../lib/api';
@@ -47,16 +47,15 @@ setState ((prev) => ({
 };
  
   return (
-<Container
-sx={{
-  mt: '2rem'}}
->
-   <h1 className={s.h1}>Контакты:</h1>
-{error && (
+    <main className={s.main}>
+<Container>
+  <br />
+  
+  {error && (
   <Typography>{error}</Typography>
 )}
 
-   <div className={s.contact}>
+ <div className={s.contact}>
    <Image
       src={largePic}
       height={800}
@@ -64,7 +63,8 @@ sx={{
       placeholder="blur"
       style={{objectFit: 'cover'}}
    />
-
+<Container>
+<h2 className={s.h1}>Оставьте сообщение:</h2>
 <div className={s.rightSide}>
           <form className={s.form}>
           <FormControl>
@@ -119,9 +119,10 @@ sx={{
                Отправить сообщение</Button>
           </form>
           </div>
+          </Container>
           </div>
-       </Container>
-      
+         </Container>
+    </main>
   )
 }
 

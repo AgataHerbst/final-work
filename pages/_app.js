@@ -2,9 +2,9 @@ import { SessionProvider } from 'next-auth/react';
 import Footer from '../components/Footer';
 import Navbar from '../components/Navbar';
 import { Container } from "react-bootstrap";
-import { createTheme, ThemeProvider } from '@mui/material/styles';
-import '@/styles/global.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
+import '@/styles/global.css';
+import { createTheme, ThemeProvider } from '@mui/material/styles';
 import { ShoppingCartProvider } from '@/context/ShoppingCartContext';
 
 
@@ -18,7 +18,7 @@ const theme = createTheme({
         },
         secondary: {
             light: '#ff7961',
-            main: '#FF6347',
+            main: '#DB7093',
             dark: '#ba000d',
             contrastText: '#000',
         },

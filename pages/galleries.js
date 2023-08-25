@@ -7,32 +7,16 @@ import { useState } from 'react';
 
 
 function Galleries() {
-  const [search, setSearch] = useState('');
-  const [products, setProducts] = useState(goods);
-
-  const handleChange = (e) => {
-    if (!e.target.value) {
-      setProducts(goods);
-      setSearch('');
-      return;
-    }
-
-    setSearch(e.target.value);
-    setProducts(
-      products.filter((good) =>
-        good.name.toLowerCase().includes(e.target.value.toLowerCase())
-      ))
-  };
-  
   return (
   <>
     <main className={s.main}>
-     <Container
-        sx={{
-          mt: '2rem'
-        }}
-      >
+     <Container>
+      <br />
         <h1 className={s.head}>Мои работы:</h1>
+        <Container
+         sx={{
+          mt: '3rem'}}
+        >
         <Grid container spacing={2}>
           {goods.map(good => (
             <Grid item xs="12" md="4" key={good.id}>
@@ -40,6 +24,7 @@ function Galleries() {
             </Grid>
           ))}
         </Grid>
+      </Container>
       </Container>
       </main>
   </>

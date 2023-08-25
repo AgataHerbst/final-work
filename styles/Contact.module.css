@@ -1,3 +1,6 @@
+.main{
+  background: linear-gradient(to bottom, #eceff1, white);
+}
 .contactHead {
   font-size: 20px;
 }
@@ -12,7 +15,9 @@
   margin-top: 2rem;
 }
 .h1{
-  color: #808080;
+  color: #455a64;
+  text-align: center;
+
 }
 
 .rightSide {
@@ -50,6 +55,7 @@
 .form input:focus,
 .textarea:focus {
   outline: none;
+  
 }
 
 .contact {

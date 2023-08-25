@@ -1,5 +1,5 @@
 .main{
-  background: linear-gradient(to bottom, #D8BFD8, #FFFFE0);
+  background: linear-gradient(to bottom, #FFFFE0, #D8BFD8);
   color: black;
   font-size: 20px;
 }
@@ -10,3 +10,4 @@
   text-align: center;
   margin-top: 50px;
 }
+

@@ -38,9 +38,11 @@ export default function Navbar({ links }) {
                     <Grid sx={{ placeItems: "center" }} container>
                         <Grid item xs={2}>
                             <Typography
-                                variant="h6"
+                                variant="h5"
                                 component="span"
-                                sx={{ flexGrow: 1 }}
+                                color="#3e2723"
+                               
+                                sx={{ flexGrow: 1}}
                             >
                                 <Image src="/logos1.jpg" width="60" height="60" alt="cake" />
                                 IrisBacker
@@ -56,7 +58,7 @@ export default function Navbar({ links }) {
                                             className={pathname === src
                                                 ? 'active'
                                                 : ''}>
-                                            <Link href={src} className="link">{name}</Link>
+                                            <Link href={src} className="link text-white">{name}</Link>
                                         </div>
                                     )}
                                 </div>

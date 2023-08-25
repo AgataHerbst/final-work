@@ -34,7 +34,10 @@ export default function Home() {
   return (
     <>
      <main>
-      <Container>
+      <Container
+      sx={{
+        mt: '4rem'}}
+      >
     <Heading />
   <Link href='galleries'><Button variant="contained">Все торты</Button></Link>
       <Image src="/backer/chef2.jpg" width={200} height={200} alt="chef" />
