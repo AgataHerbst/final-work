@@ -4,7 +4,7 @@ import largePic from '../public/contact/grey.jpg';
 import { Container, FormLabel, Button, TextField, FormControl, Typography } from '@mui/material';
 import { useState } from 'react';
 import { sendContactForm } from '../lib/api';
-
+import Footer from '../components/Footer';
 
 const initValues = {
    name: "",
@@ -58,7 +58,7 @@ setState ((prev) => ({
  <div className={s.contact}>
    <Image
       src={largePic}
-      height={800}
+      height={700}
       alt='chef'
       placeholder="blur"
       style={{objectFit: 'cover'}}
@@ -122,6 +122,7 @@ setState ((prev) => ({
           </Container>
           </div>
          </Container>
+         <Footer />
     </main>
   )
 }

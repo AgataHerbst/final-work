@@ -3,7 +3,7 @@ import { StoreItem } from "../components/StoreItem";
 import { goods } from '../data/goods';
 import s from '../styles/Galleries.module.css';
 //import Search from '../components/Search';
-import { useState } from 'react';
+import Footer from '../components/Footer';
 
 
 function Galleries() {
@@ -26,6 +26,7 @@ function Galleries() {
         </Grid>
       </Container>
       </Container>
+      <Footer />
       </main>
   </>
   )

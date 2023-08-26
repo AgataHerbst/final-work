@@ -3,6 +3,7 @@ import { authOptions } from './api/auth/[...nextauth]'
 import { getServerSession } from "next-auth/next";
 import s from '../styles/Profile.module.css';
 import { Button, Container } from "@mui/material";
+import Footer from '../components/Footer';
 
 
 
@@ -21,6 +22,7 @@ if (session) {
         <h3>{session?.user?.name}</h3> <br />
         <Button variant="contained" onClick={() =>signOut()}>Выйти</Button>
         </Container>
+        <Footer />
         </>
     )
    

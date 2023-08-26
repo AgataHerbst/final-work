@@ -1,6 +1,8 @@
 import { Box, Stack, Skeleton } from "@mui/material";
 import { useState } from "react";
 import Post from "../components/Post";
+import Footer from '../components/Footer';
+import { Container } from "@mui/material";
 
 
 const Comments = () => {
@@ -12,6 +14,8 @@ const Comments = () => {
   }, [1000]);
 
   return (
+    <>
+    <Container>
     <Box flex={4} p={{ xs: 0, md: 2 }}>
       {loading ? (
         <Stack spacing={1}>
@@ -28,7 +32,11 @@ const Comments = () => {
           </>
       )}
     </Box>
+     <Footer />
+     </Container>
+     </>
   );
+ 
 };
 
 export default Comments;

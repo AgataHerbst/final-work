@@ -1,5 +1,4 @@
 import { SessionProvider } from 'next-auth/react';
-import Footer from '../components/Footer';
 import Navbar from '../components/Navbar';
 import { Container } from "react-bootstrap";
 import 'bootstrap/dist/css/bootstrap.min.css';
@@ -46,8 +45,7 @@ function MyApp({ Component,
                     <Navbar links={linksArray} />
                 <Component {...pageProps} />
                  <Container>
-                        <Footer />
-                    </Container>
+                </Container>
                 </ThemeProvider>
             </SessionProvider>
         </ShoppingCartProvider>

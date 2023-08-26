@@ -24,7 +24,7 @@ function DrawerComp({ links }) {
                     ? 'active'
                     : ''}
                 >
-                  <Link href={src} className="link">{name}</Link>
+                  <Link href={src} className="link text-white">{name}</Link>
                 </ListItemText>
               </ListItemIcon>
             </ListItemButton>

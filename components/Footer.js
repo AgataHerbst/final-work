@@ -5,7 +5,7 @@ import SocialMediaIcons from '../components/SocialMediaIcons';
 function Footer() {
    return <>
       <footer className={s.footer}>
-         <div className={s.heading}>&copy; 2023 IrisBackery.com</div>
+         <div className={s.heading}>&copy; 2023 IrisBakery.com</div>
         <SocialMediaIcons />
       </footer>
       </>

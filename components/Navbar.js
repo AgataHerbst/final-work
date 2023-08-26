@@ -45,7 +45,7 @@ export default function Navbar({ links }) {
                                 sx={{ flexGrow: 1}}
                             >
                                 <Image src="/logos1.jpg" width="60" height="60" alt="cake" />
-                                IrisBacker
+                                IrisBaker
                             </Typography>
 
                         </Grid>

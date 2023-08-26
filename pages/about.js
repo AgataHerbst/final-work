@@ -3,7 +3,7 @@ import s from '../styles/About.module.css';
 import Box from '@mui/material/Box';
 import ImageListItem, { imageListItemClasses } from "@mui/material/ImageListItem";
 import { createTheme, ThemeProvider } from "@mui/material/styles";
-
+import Footer from '../components/Footer';
 
 const data = [
   {
@@ -52,8 +52,8 @@ export default function About() {
         <ThemeProvider theme={theme}>
           <Box
             sx={{
-              mt:'2rem',
-              height: 500,
+              mt:'1rem',
+              height: 400,
               display: "grid",
               gridTemplateColumns: {
                mobile: "repeat(2, 1fr)",
@@ -85,9 +85,9 @@ export default function About() {
             Меня зовут Иришка и я очень люблю печь и изготавливать всевозможные торты. Для своих тортов я использую только натуральные продукты, чтобы вкус моей выпечки навсегда остался в вашей вкусовой памяти. Каждый день я нахожу новые идеи для своих шедевров и воплощаю их в жизнь, чтобы радовать тех, кто ОБОЖАЕТ вкусные сладости!!!
           </p>
         </div>
-
-        </Container>
+       </Container>
       </Container>
+      <Footer />
     </main>
   );
 }

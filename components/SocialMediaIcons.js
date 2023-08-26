@@ -9,17 +9,17 @@ const SocialMediaIcons = () => {
       <Link
         href="https://t.me/+HXDREgaKVyk2MzQy"
       >
-        <TelegramIcon sx={{ fontSize: 50 }} />
+        <TelegramIcon sx={{ fontSize: 40 }} />
       </Link>
       <Link
         href="https://chat.whatsapp.com/LwsrjwGOS7aLcqeOEHpJyj"
       >
-        <WhatsAppIcon sx={{ fontSize: 50 }} />
+        <WhatsAppIcon sx={{ fontSize: 40 }} />
       </Link>
       <Link
         href="https://instagram.com/bakery_irsh?igshid=NjIwNzIyMDk2Mg=="
       >
-        <InstagramIcon sx={{ fontSize: 50 }} />
+        <InstagramIcon sx={{ fontSize: 40 }} />
       </Link>
     </div>
   );

@@ -5,6 +5,7 @@ import { Typography, Button, Container } from "@mui/material";
 import Box from '@mui/material/Box';
 import ImageListItem, {imageListItemClasses} from "@mui/material/ImageListItem";
 import { createTheme, ThemeProvider } from "@mui/material/styles";
+import Footer from '../components/Footer';
 
 const data = [
   {
@@ -36,7 +37,7 @@ export default function Home() {
      <main>
       <Container
       sx={{
-        mt: '4rem'}}
+        mt: '3rem'}}
       >
     <Heading />
   <Link href='galleries'><Button variant="contained">Все торты</Button></Link>
@@ -82,6 +83,7 @@ export default function Home() {
       </Box>
       </ThemeProvider>
      </Container>
+     <Footer />
       </main>
       </>
   )
